@@ -1,0 +1,9 @@
+{
+  "event_id": "092108-001-sample-001",
+  "event_type": "RESOURCE_RESERVED",
+  "aggregate_type": "collection_resource",
+  "aggregate_id": "museum_branch_resource_handoff-001",
+  "occurred_at": "2026-09-20T18:00:00+08:00",
+  "version": 1,
+  "summary": "登记博物馆分馆资源接力的首条领域记录"
+}
