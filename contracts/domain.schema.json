@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "博物馆分馆资源接力领域事件",
+  "description": "总馆公共教育部跨馆资源接力服务的统一事件信封。信封字段自 v0.1 起保持兼容，只做加法；事件一旦接收，event_id / aggregate_id / occurred_at / version 不得原地改写，业务更正必须产生后继事件。",
   "type": "object",
   "required": [
     "event_id",
@@ -14,25 +15,72 @@
   "properties": {
     "event_id": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "事件全局唯一标识，建议格式 YYMMDD-场馆码-序号。"
     },
     "event_type": {
       "type": "string",
       "enum": [
+        "RESOURCE_REGISTERED",
         "RESOURCE_RESERVED",
-        "TRANSFER_DISPATCHED",
+        "RESOURCE_RESERVATION_RELEASED",
         "CONDITION_RECORDED",
+        "ENVIRONMENT_ALERT_RAISED",
+        "ENVIRONMENT_CLEARED",
+        "RESOURCE_QUARANTINED",
+        "RESOURCE_CLEARED",
+        "RESOURCE_RETURNED",
+        "TRANSFER_PLANNED",
+        "TRANSFER_DISPATCHED",
+        "TRANSFER_DELAYED",
+        "TRANSFER_HANDED_OVER",
+        "TRANSFER_ACKNOWLEDGED",
+        "TRANSFER_CLOSED",
+        "VENUE_REGISTERED",
+        "VENUE_TAKEN_OUT_OF_SERVICE",
+        "VENUE_BACK_IN_SERVICE",
+        "EXHIBIT_VERSION_PUBLISHED",
+        "EXHIBIT_VERSION_SUPERSEDED",
+        "INTERPRETATION_PUBLISHED",
+        "COURSE_MATERIAL_PUBLISHED",
+        "SESSION_CONTENT_PINNED",
+        "EDUCATOR_REGISTERED",
+        "EDUCATOR_ASSIGNED",
+        "EDUCATOR_UNASSIGNED",
         "SESSION_OPENED",
-        "RESOURCE_RETURNED"
+        "SESSION_QUOTA_PROTECTED",
+        "SESSION_RELOCATED",
+        "SESSION_RESCHEDULED",
+        "SESSION_CANCELLED",
+        "SESSION_CLOSED",
+        "GROUP_BOOKING_CREATED",
+        "BOOKING_CONFIRMED",
+        "BOOKING_CANCELLED",
+        "WAITLIST_ENTRY_ADDED",
+        "WAITLIST_ENTRY_PROMOTED",
+        "WAITLIST_ENTRY_EXPIRED",
+        "OFFLINE_REPORT_STARTED",
+        "OFFLINE_REPORT_COMPLETED",
+        "FEEDBACK_RECORDED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
         "collection_resource",
+        "movable_replica",
+        "digital_content",
+        "exhibit_version",
+        "interpretation",
+        "venue",
+        "venue_slot",
+        "educator",
+        "course_material",
         "program_session",
+        "group_booking",
+        "waitlist_entry",
         "transfer_order",
-        "venue_slot"
+        "activity_feedback"
       ]
     },
     "aggregate_id": {
@@ -45,11 +93,48 @@
     },
     "version": {
       "type": "integer",
-      "minimum": 1
+      "minimum": 1,
+      "description": "该聚合实例内的事件序号，从 1 起严格递增。"
     },
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1,
+      "description": "可选。分馆离线补报的去重键：同一键只认一次，重复投递直接丢弃并告警，不产生第二条事件。"
+    },
+    "correlation_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "可选。同一场接力（课程档期及其替代场次、相关调拨）共用的关联标识。"
+    },
+    "caused_by_event_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "可选。触发本事件的上游事件（如温湿度告警、运输迟延、场馆停用），用于只重排受影响资源的因果追溯。"
+    },
+    "payload": {
+      "type": "object",
+      "description": "事件特有内容。跨记录不变量由 src 投影与校验层保证，信封本身不限制附加字段。",
+      "properties": {
+        "resource_kind": {
+          "type": "string",
+          "enum": ["authentic_object", "replica", "digital"],
+          "description": "authentic_object=馆藏真品（按温湿度等环境条件借调）；replica=可移动复制品（实体运输、可重复使用）；digital=数字内容（授权并发，不占运输）。"
+        },
+        "venue_id": { "type": "string" },
+        "branch_name": { "type": "string" },
+        "session_id": { "type": "string" },
+        "replacement_session_id": { "type": "string" },
+        "resource_id": { "type": "string" },
+        "transfer_order_id": { "type": "string" },
+        "educator_id": { "type": "string" },
+        "from_venue_id": { "type": "string" },
+        "to_venue_id": { "type": "string" }
+      },
+      "additionalProperties": true
     }
   },
   "additionalProperties": true

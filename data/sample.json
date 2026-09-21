@@ -1,9 +1,1874 @@
 {
-  "event_id": "092108-001-sample-001",
-  "event_type": "RESOURCE_RESERVED",
-  "aggregate_type": "collection_resource",
-  "aggregate_id": "museum_branch_resource_handoff-001",
-  "occurred_at": "2026-09-20T18:00:00+08:00",
-  "version": 1,
-  "summary": "登记博物馆分馆资源接力的首条领域记录"
+  "description": "北魏服饰复原课跨馆资源接力完整事件流（含异常重排、保障名额、离线补报、替代场次、版本固化）。duplicate_deliveries 中的记录信封有效但因幂等键重复必须被接收侧丢弃。",
+  "correlation_id": "RELAY-20261017-BEIWEI",
+  "events": [
+    {
+      "event_id": "260101-001",
+      "event_type": "VENUE_REGISTERED",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-MAIN",
+      "occurred_at": "2026-01-01T09:00:00+08:00",
+      "version": 1,
+      "summary": "登记大同市博物馆总馆",
+      "payload": {
+        "venue_id": "V-MAIN",
+        "branch_name": "大同市博物馆总馆",
+        "default_capacity": 120,
+        "step_free_access": true,
+        "storage_available": true
+      }
+    },
+    {
+      "event_id": "260102-002",
+      "event_type": "VENUE_REGISTERED",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-MT",
+      "occurred_at": "2026-01-02T09:00:00+08:00",
+      "version": 1,
+      "summary": "登记北魏明堂分馆",
+      "payload": {
+        "venue_id": "V-MT",
+        "branch_name": "北魏明堂分馆",
+        "default_capacity": 30,
+        "step_free_access": true,
+        "storage_available": true
+      }
+    },
+    {
+      "event_id": "260103-003",
+      "event_type": "VENUE_REGISTERED",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-PC",
+      "occurred_at": "2026-01-03T09:00:00+08:00",
+      "version": 1,
+      "summary": "登记平城遗址分馆",
+      "payload": {
+        "venue_id": "V-PC",
+        "branch_name": "平城遗址分馆",
+        "default_capacity": 30,
+        "step_free_access": true,
+        "storage_available": true
+      }
+    },
+    {
+      "event_id": "260104-004",
+      "event_type": "VENUE_REGISTERED",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-YG",
+      "occurred_at": "2026-01-04T09:00:00+08:00",
+      "version": 1,
+      "summary": "登记云冈石窟分馆",
+      "payload": {
+        "venue_id": "V-YG",
+        "branch_name": "云冈石窟分馆",
+        "default_capacity": 60,
+        "step_free_access": true,
+        "storage_available": true
+      }
+    },
+    {
+      "event_id": "260105-005",
+      "event_type": "VENUE_REGISTERED",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-HH",
+      "occurred_at": "2026-01-05T09:00:00+08:00",
+      "version": 1,
+      "summary": "登记北朝艺术分馆",
+      "payload": {
+        "venue_id": "V-HH",
+        "branch_name": "北朝艺术分馆",
+        "default_capacity": 40,
+        "step_free_access": true,
+        "storage_available": true
+      }
+    },
+    {
+      "event_id": "260106-006",
+      "event_type": "VENUE_REGISTERED",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-SJ",
+      "occurred_at": "2026-01-06T09:00:00+08:00",
+      "version": 1,
+      "summary": "登记史前大同分馆",
+      "payload": {
+        "venue_id": "V-SJ",
+        "branch_name": "史前大同分馆",
+        "default_capacity": 35,
+        "step_free_access": false,
+        "storage_available": true
+      }
+    },
+    {
+      "event_id": "260107-007",
+      "event_type": "VENUE_REGISTERED",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-MR",
+      "occurred_at": "2026-01-07T09:00:00+08:00",
+      "version": 1,
+      "summary": "登记明代边关分馆",
+      "payload": {
+        "venue_id": "V-MR",
+        "branch_name": "明代边关分馆",
+        "default_capacity": 25,
+        "step_free_access": false,
+        "storage_available": true
+      }
+    },
+    {
+      "event_id": "260108-008",
+      "event_type": "VENUE_REGISTERED",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-CH",
+      "occurred_at": "2026-01-08T09:00:00+08:00",
+      "version": 1,
+      "summary": "登记长城抗战分馆",
+      "payload": {
+        "venue_id": "V-CH",
+        "branch_name": "长城抗战分馆",
+        "default_capacity": 45,
+        "step_free_access": true,
+        "storage_available": true
+      }
+    },
+    {
+      "event_id": "260109-009",
+      "event_type": "VENUE_REGISTERED",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-MZ",
+      "occurred_at": "2026-01-09T09:00:00+08:00",
+      "version": 1,
+      "summary": "登记民族融合分馆",
+      "payload": {
+        "venue_id": "V-MZ",
+        "branch_name": "民族融合分馆",
+        "default_capacity": 30,
+        "step_free_access": true,
+        "storage_available": true
+      }
+    },
+    {
+      "event_id": "260110-010",
+      "event_type": "VENUE_REGISTERED",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-WH",
+      "occurred_at": "2026-01-10T09:00:00+08:00",
+      "version": 1,
+      "summary": "登记魏碑书法分馆",
+      "payload": {
+        "venue_id": "V-WH",
+        "branch_name": "魏碑书法分馆",
+        "default_capacity": 20,
+        "step_free_access": false,
+        "storage_available": true
+      }
+    },
+    {
+      "event_id": "260202-011",
+      "event_type": "RESOURCE_REGISTERED",
+      "aggregate_type": "collection_resource",
+      "aggregate_id": "R-AUTH-01",
+      "occurred_at": "2026-02-02T10:00:00+08:00",
+      "version": 1,
+      "summary": "登记馆藏真品：北魏彩绘陶俑（鲜卑常服）",
+      "payload": {
+        "resource_kind": "authentic_object",
+        "name": "北魏彩绘陶俑",
+        "home_venue_id": "V-MAIN",
+        "environment_requirements": {
+          "temperature_c": [
+            18,
+            22
+          ],
+          "humidity_pct": [
+            45,
+            60
+          ]
+        }
+      }
+    },
+    {
+      "event_id": "260203-012",
+      "event_type": "RESOURCE_REGISTERED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-01",
+      "occurred_at": "2026-02-03T10:00:00+08:00",
+      "version": 1,
+      "summary": "登记复制教具：北魏鲜卑常服一套（主用）",
+      "payload": {
+        "resource_kind": "replica",
+        "name": "鲜卑常服复制教具（主用）",
+        "home_venue_id": "V-MAIN"
+      }
+    },
+    {
+      "event_id": "260203-013",
+      "event_type": "RESOURCE_REGISTERED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-02",
+      "occurred_at": "2026-02-03T10:05:00+08:00",
+      "version": 1,
+      "summary": "登记复制教具：北魏鲜卑常服一套（备用）",
+      "payload": {
+        "resource_kind": "replica",
+        "name": "鲜卑常服复制教具（备用）",
+        "home_venue_id": "V-MAIN"
+      }
+    },
+    {
+      "event_id": "260204-014",
+      "event_type": "RESOURCE_REGISTERED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-03",
+      "occurred_at": "2026-02-04T10:00:00+08:00",
+      "version": 1,
+      "summary": "登记复制教具：彩绘陶俑等比例复制件",
+      "payload": {
+        "resource_kind": "replica",
+        "name": "彩绘陶俑复制件",
+        "home_venue_id": "V-MAIN"
+      }
+    },
+    {
+      "event_id": "260205-015",
+      "event_type": "RESOURCE_REGISTERED",
+      "aggregate_type": "digital_content",
+      "aggregate_id": "D-DIG-01",
+      "occurred_at": "2026-02-05T10:00:00+08:00",
+      "version": 1,
+      "summary": "登记数字内容：北魏服饰复原数字走秀（可并发授权，不占运力）",
+      "payload": {
+        "resource_kind": "digital",
+        "name": "北魏服饰数字走秀",
+        "home_venue_id": "V-MAIN",
+        "concurrent_licenses": 9
+      }
+    },
+    {
+      "event_id": "260803-016",
+      "event_type": "EDUCATOR_REGISTERED",
+      "aggregate_type": "educator",
+      "aggregate_id": "EDU-SHEN",
+      "occurred_at": "2026-08-03T09:00:00+08:00",
+      "version": 1,
+      "summary": "登记讲师沈老师（北魏服饰方向，可授复原课）",
+      "payload": {
+        "educator_id": "EDU-SHEN",
+        "name": "沈老师",
+        "qualified_courses": [
+          "CM-BEIWEI-RESTORE"
+        ],
+        "qualification_valid_until": "2027-08-02"
+      }
+    },
+    {
+      "event_id": "260803-017",
+      "event_type": "EDUCATOR_REGISTERED",
+      "aggregate_type": "educator",
+      "aggregate_id": "EDU-HE",
+      "occurred_at": "2026-08-03T09:05:00+08:00",
+      "version": 1,
+      "summary": "登记讲师何老师（史前陶器方向，不可授复原课）",
+      "payload": {
+        "educator_id": "EDU-HE",
+        "name": "何老师",
+        "qualified_courses": [
+          "CM-PREHISTORIC-POTTERY"
+        ],
+        "qualification_valid_until": "2027-08-02"
+      }
+    },
+    {
+      "event_id": "260810-018",
+      "event_type": "EXHIBIT_VERSION_PUBLISHED",
+      "aggregate_type": "exhibit_version",
+      "aggregate_id": "EX-BEIWEI-V1",
+      "occurred_at": "2026-08-10T09:00:00+08:00",
+      "version": 1,
+      "summary": "发布《北魏服饰》展陈版本 v1",
+      "payload": {
+        "exhibit_id": "EX-BEIWEI",
+        "version_tag": "v1",
+        "title": "北魏服饰展陈（初版）"
+      }
+    },
+    {
+      "event_id": "260810-019",
+      "event_type": "INTERPRETATION_PUBLISHED",
+      "aggregate_type": "interpretation",
+      "aggregate_id": "INT-BEIWEI-V1",
+      "occurred_at": "2026-08-10T09:30:00+08:00",
+      "version": 1,
+      "summary": "发布讲解口径 v1（平城鲜卑服制初考）",
+      "payload": {
+        "interpretation_id": "INT-BEIWEI",
+        "version_tag": "v1",
+        "title": "平城鲜卑服制初考"
+      }
+    },
+    {
+      "event_id": "260812-020",
+      "event_type": "COURSE_MATERIAL_PUBLISHED",
+      "aggregate_type": "course_material",
+      "aggregate_id": "CM-BEIWEI-RESTORE",
+      "occurred_at": "2026-08-12T09:00:00+08:00",
+      "version": 1,
+      "summary": "发布课程《北魏服饰复原课》材料 v1",
+      "payload": {
+        "course_code": "CM-BEIWEI-RESTORE",
+        "version_tag": "v1",
+        "title": "北魏服饰复原课",
+        "materials": [
+          "讲义v1",
+          "穿戴耗材清单v1"
+        ]
+      }
+    },
+    {
+      "event_id": "260922-021",
+      "event_type": "SESSION_OPENED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-MT",
+      "occurred_at": "2026-09-22T09:00:00+08:00",
+      "version": 1,
+      "summary": "10月17日北魏服饰复原课在北魏明堂分馆开仓预约",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "venue_id": "V-MT",
+        "course_code": "CM-BEIWEI-RESTORE",
+        "scheduled_start": "2026-10-17T10:00:00+08:00",
+        "scheduled_end": "2026-10-17T11:30:00+08:00",
+        "capacity": 26,
+        "protected_children_seats": 12,
+        "accessible_seats": 4
+      }
+    },
+    {
+      "event_id": "260922-022",
+      "event_type": "SESSION_QUOTA_PROTECTED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-MT",
+      "occurred_at": "2026-09-22T09:05:00+08:00",
+      "version": 2,
+      "summary": "登记保障名额：儿童团体12席、无障碍4席，保留至开场前48小时",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "protected_children_seats": 12,
+        "accessible_seats": 4,
+        "protect_until": "2026-10-15T10:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "260922-023",
+      "event_type": "SESSION_CONTENT_PINNED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-MT",
+      "occurred_at": "2026-09-22T09:10:00+08:00",
+      "version": 3,
+      "summary": "本场固化讲解v1、展陈v1、材料v1",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "interpretation_id": "INT-BEIWEI",
+        "interpretation_version": "v1",
+        "exhibit_id": "EX-BEIWEI",
+        "exhibit_version": "v1",
+        "course_material_version": "v1"
+      }
+    },
+    {
+      "event_id": "260922-024",
+      "event_type": "EDUCATOR_ASSIGNED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-MT",
+      "occurred_at": "2026-09-22T09:15:00+08:00",
+      "version": 4,
+      "summary": "指派沈老师授课（资质在有效期内、课程匹配）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "educator_id": "EDU-SHEN",
+        "educator_aggregate": "EDU-SHEN"
+      }
+    },
+    {
+      "event_id": "260922-025",
+      "event_type": "RESOURCE_RESERVED",
+      "aggregate_type": "collection_resource",
+      "aggregate_id": "R-AUTH-01",
+      "occurred_at": "2026-09-22T09:20:00+08:00",
+      "version": 2,
+      "summary": "真品陶俑预约给明堂场次（须环境达标）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "authentic_object",
+        "session_id": "S-20261017-MT",
+        "venue_id": "V-MT"
+      }
+    },
+    {
+      "event_id": "260922-026",
+      "event_type": "RESOURCE_RESERVED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-01",
+      "occurred_at": "2026-09-22T09:25:00+08:00",
+      "version": 2,
+      "summary": "主用复制教具预约给明堂场次",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "session_id": "S-20261017-MT",
+        "venue_id": "V-MT"
+      }
+    },
+    {
+      "event_id": "260922-027",
+      "event_type": "RESOURCE_RESERVED",
+      "aggregate_type": "digital_content",
+      "aggregate_id": "D-DIG-01",
+      "occurred_at": "2026-09-22T09:30:00+08:00",
+      "version": 2,
+      "summary": "数字走秀授权明堂场次并发使用",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "digital",
+        "session_id": "S-20261017-MT",
+        "venue_id": "V-MT"
+      }
+    },
+    {
+      "event_id": "260923-028",
+      "event_type": "GROUP_BOOKING_CREATED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-001",
+      "occurred_at": "2026-09-23T10:00:00+08:00",
+      "version": 1,
+      "summary": "城区三小三年级团体报名12人（儿童团体）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "group_name": "城区三小三年级",
+        "seats": 12,
+        "quota_class": "children",
+        "contact_role": "带队老师"
+      }
+    },
+    {
+      "event_id": "260923-029",
+      "event_type": "BOOKING_CONFIRMED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-001",
+      "occurred_at": "2026-09-23T10:05:00+08:00",
+      "version": 2,
+      "summary": "儿童团体12席确认，占用儿童保障名额12/12",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "seats": 12,
+        "quota_class": "children"
+      }
+    },
+    {
+      "event_id": "260924-030",
+      "event_type": "GROUP_BOOKING_CREATED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-002",
+      "occurred_at": "2026-09-24T10:00:00+08:00",
+      "version": 1,
+      "summary": "阳光之家行动不便者家庭报名4人（含4辆轮椅）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "group_name": "阳光之家家庭",
+        "seats": 4,
+        "quota_class": "accessible",
+        "contact_role": "家属代表"
+      }
+    },
+    {
+      "event_id": "260924-031",
+      "event_type": "BOOKING_CONFIRMED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-002",
+      "occurred_at": "2026-09-24T10:05:00+08:00",
+      "version": 2,
+      "summary": "无障碍席位4席确认 4/4",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "seats": 4,
+        "quota_class": "accessible"
+      }
+    },
+    {
+      "event_id": "260925-032",
+      "event_type": "GROUP_BOOKING_CREATED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-003",
+      "occurred_at": "2026-09-25T10:00:00+08:00",
+      "version": 1,
+      "summary": "普通研学团报名10人",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "group_name": "朔北研学团",
+        "seats": 10,
+        "quota_class": "general",
+        "contact_role": "随团导师"
+      }
+    },
+    {
+      "event_id": "260925-033",
+      "event_type": "BOOKING_CONFIRMED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-003",
+      "occurred_at": "2026-09-25T10:05:00+08:00",
+      "version": 2,
+      "summary": "普通席10席确认 10/10，本场约满",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "seats": 10,
+        "quota_class": "general"
+      }
+    },
+    {
+      "event_id": "260926-034",
+      "event_type": "WAITLIST_ENTRY_ADDED",
+      "aggregate_type": "waitlist_entry",
+      "aggregate_id": "W-001",
+      "occurred_at": "2026-09-26T09:00:00+08:00",
+      "version": 1,
+      "summary": "散客王女士（轮椅使用者）登记无障碍候补，顺位1",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "party_label": "王女士一行",
+        "party_size": 1,
+        "requested_class": "accessible",
+        "position": 1
+      }
+    },
+    {
+      "event_id": "260926-035",
+      "event_type": "WAITLIST_ENTRY_ADDED",
+      "aggregate_type": "waitlist_entry",
+      "aggregate_id": "W-002",
+      "occurred_at": "2026-09-26T09:30:00+08:00",
+      "version": 1,
+      "summary": "散客高先生父女登记普通候补，顺位2",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "party_label": "高先生父女",
+        "party_size": 2,
+        "requested_class": "general",
+        "position": 2
+      }
+    },
+    {
+      "event_id": "260926-036",
+      "event_type": "WAITLIST_ENTRY_ADDED",
+      "aggregate_type": "waitlist_entry",
+      "aggregate_id": "W-003",
+      "occurred_at": "2026-09-26T10:00:00+08:00",
+      "version": 1,
+      "summary": "散客赵同学登记普通候补，顺位3",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "party_label": "赵同学",
+        "party_size": 1,
+        "requested_class": "general",
+        "position": 3
+      }
+    },
+    {
+      "event_id": "261015-037",
+      "event_type": "CONDITION_RECORDED",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-MT",
+      "occurred_at": "2026-10-15T13:50:00+08:00",
+      "version": 2,
+      "summary": "明堂分馆库环境读数：湿度68%，逼近上限",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "venue_id": "V-MT",
+        "reading": {
+          "temperature_c": 21.0,
+          "humidity_pct": 68
+        }
+      }
+    },
+    {
+      "event_id": "261015-038",
+      "event_type": "ENVIRONMENT_ALERT_RAISED",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-MT",
+      "occurred_at": "2026-10-15T14:00:00+08:00",
+      "version": 3,
+      "summary": "明堂分馆湿度升至72%，超出真品借调条件（45%-60%）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "venue_id": "V-MT",
+        "reading": {
+          "temperature_c": 21.2,
+          "humidity_pct": 72
+        },
+        "violated_requirement": "humidity_pct"
+      }
+    },
+    {
+      "event_id": "261015-039",
+      "event_type": "RESOURCE_RESERVATION_RELEASED",
+      "aggregate_type": "collection_resource",
+      "aggregate_id": "R-AUTH-01",
+      "occurred_at": "2026-10-15T14:10:00+08:00",
+      "version": 3,
+      "summary": "真品陶俑预约撤回、暂不出库（复制品与数字内容预约保留）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "authentic_object",
+        "session_id": "S-20261017-MT",
+        "reason": "environment_alert"
+      },
+      "caused_by_event_id": "261015-038"
+    },
+    {
+      "event_id": "261015-040",
+      "event_type": "RESOURCE_QUARANTINED",
+      "aggregate_type": "collection_resource",
+      "aggregate_id": "R-AUTH-01",
+      "occurred_at": "2026-10-15T14:15:00+08:00",
+      "version": 4,
+      "summary": "真品暂缓借调，待场馆环境恢复并复检",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "authentic_object",
+        "reason": "environment_alert"
+      },
+      "caused_by_event_id": "261015-038"
+    },
+    {
+      "event_id": "261015-041",
+      "event_type": "RESOURCE_RESERVED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-03",
+      "occurred_at": "2026-10-15T14:30:00+08:00",
+      "version": 2,
+      "summary": "启用陶俑复制件顶替真品（同场复制品，仅受影响资源被替换）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "session_id": "S-20261017-MT",
+        "venue_id": "V-MT",
+        "replaces_resource": "R-AUTH-01"
+      },
+      "caused_by_event_id": "261015-038"
+    },
+    {
+      "event_id": "261015-042",
+      "event_type": "TRANSFER_PLANNED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-001",
+      "occurred_at": "2026-10-15T16:00:00+08:00",
+      "version": 1,
+      "summary": "排运 T-01：主用教具与陶俑复制件 总馆→明堂分馆",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "transfer_order_id": "T-2026-001",
+        "resources": [
+          "R-REP-01",
+          "R-REP-03"
+        ],
+        "from_venue_id": "V-MAIN",
+        "to_venue_id": "V-MT",
+        "planned_arrival": "2026-10-16T10:30:00+08:00"
+      }
+    },
+    {
+      "event_id": "261015-043",
+      "event_type": "BOOKING_CANCELLED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-003",
+      "occurred_at": "2026-10-15T17:00:00+08:00",
+      "version": 3,
+      "summary": "普通研学团因行程冲突取消10席，普通席腾空",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "seats": 10,
+        "quota_class": "general"
+      }
+    },
+    {
+      "event_id": "261015-044",
+      "event_type": "WAITLIST_ENTRY_PROMOTED",
+      "aggregate_type": "waitlist_entry",
+      "aggregate_id": "W-002",
+      "occurred_at": "2026-10-15T17:05:00+08:00",
+      "version": 2,
+      "summary": "候补顺位2高先生父女晋升并获2席",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "party_size": 2,
+        "requested_class": "general"
+      }
+    },
+    {
+      "event_id": "261015-045",
+      "event_type": "GROUP_BOOKING_CREATED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-004",
+      "occurred_at": "2026-10-15T17:08:00+08:00",
+      "version": 1,
+      "summary": "高先生父女候补转正，生成预约单",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "group_name": "高先生家庭",
+        "seats": 2,
+        "quota_class": "general",
+        "from_waitlist": "W-002"
+      }
+    },
+    {
+      "event_id": "261015-046",
+      "event_type": "BOOKING_CONFIRMED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-004",
+      "occurred_at": "2026-10-15T17:10:00+08:00",
+      "version": 2,
+      "summary": "高先生家庭2席确认（普通席 2/10）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "seats": 2,
+        "quota_class": "general"
+      }
+    },
+    {
+      "event_id": "261015-047",
+      "event_type": "WAITLIST_ENTRY_PROMOTED",
+      "aggregate_type": "waitlist_entry",
+      "aggregate_id": "W-003",
+      "occurred_at": "2026-10-15T17:12:00+08:00",
+      "version": 2,
+      "summary": "候补顺位3赵同学获晋升机会（普通席余8）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "party_size": 1,
+        "requested_class": "general",
+        "offer_expires_at": "2026-10-15T20:12:00+08:00"
+      }
+    },
+    {
+      "event_id": "261015-048",
+      "event_type": "WAITLIST_ENTRY_EXPIRED",
+      "aggregate_type": "waitlist_entry",
+      "aggregate_id": "W-003",
+      "occurred_at": "2026-10-15T20:15:00+08:00",
+      "version": 3,
+      "summary": "赵同学3小时内未确认，晋升名额作废，候补条目失效",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-MT",
+        "reason": "offer_not_confirmed"
+      }
+    },
+    {
+      "event_id": "261016-049",
+      "event_type": "TRANSFER_DISPATCHED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-001",
+      "occurred_at": "2026-10-16T08:00:00+08:00",
+      "version": 2,
+      "summary": "T-01 发货（厢式货车，同车另有他馆物资，不拆拼他单）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-01",
+          "R-REP-03"
+        ],
+        "from_venue_id": "V-MAIN",
+        "to_venue_id": "V-MT",
+        "carrier_capacity": "van-1"
+      }
+    },
+    {
+      "event_id": "261016-050",
+      "event_type": "TRANSFER_DELAYED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-001",
+      "occurred_at": "2026-10-16T11:00:00+08:00",
+      "version": 3,
+      "summary": "T-01 因道路封闭预计15:30才到，晚于课前查验窗口",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-01",
+          "R-REP-03"
+        ],
+        "reason": "road_closure",
+        "revised_eta": "2026-10-16T15:30:00+08:00"
+      }
+    },
+    {
+      "event_id": "261016-051",
+      "event_type": "RESOURCE_RESERVED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-02",
+      "occurred_at": "2026-10-16T11:10:00+08:00",
+      "version": 2,
+      "summary": "紧急启用备用复制教具顶替（仅重排迟延运单上的资源）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "session_id": "S-20261017-MT",
+        "venue_id": "V-MT"
+      },
+      "caused_by_event_id": "261016-050"
+    },
+    {
+      "event_id": "261016-052",
+      "event_type": "TRANSFER_PLANNED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-002",
+      "occurred_at": "2026-10-16T11:20:00+08:00",
+      "version": 1,
+      "summary": "排急运 T-02：备用教具 总馆→明堂分馆",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "transfer_order_id": "T-2026-002",
+        "resources": [
+          "R-REP-02"
+        ],
+        "from_venue_id": "V-MAIN",
+        "to_venue_id": "V-MT",
+        "planned_arrival": "2026-10-16T12:40:00+08:00"
+      }
+    },
+    {
+      "event_id": "261016-053",
+      "event_type": "TRANSFER_DISPATCHED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-002",
+      "occurred_at": "2026-10-16T11:30:00+08:00",
+      "version": 2,
+      "summary": "T-02 发货（应急小车）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-02"
+        ],
+        "from_venue_id": "V-MAIN",
+        "to_venue_id": "V-MT"
+      }
+    },
+    {
+      "event_id": "261016-054",
+      "event_type": "TRANSFER_HANDED_OVER",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-002",
+      "occurred_at": "2026-10-16T12:40:00+08:00",
+      "version": 3,
+      "summary": "T-02 到达明堂分馆，馆员与司机当面交接",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-02"
+        ],
+        "handed_over_at": "V-MT",
+        "receiver_role": "明堂分馆库管员"
+      }
+    },
+    {
+      "event_id": "261016-055",
+      "event_type": "TRANSFER_ACKNOWLEDGED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-002",
+      "occurred_at": "2026-10-16T12:50:00+08:00",
+      "version": 4,
+      "summary": "T-02 签收：备用教具外包装完好",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-02"
+        ],
+        "acknowledged_at": "V-MT",
+        "inspector_role": "明堂分馆库管员"
+      }
+    },
+    {
+      "event_id": "261016-056",
+      "event_type": "CONDITION_RECORDED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-02",
+      "occurred_at": "2026-10-16T12:55:00+08:00",
+      "version": 3,
+      "summary": "备用教具到场查验：服饰配件齐全、无污损",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "condition_result": "合格",
+        "inspected_at": "V-MT"
+      }
+    },
+    {
+      "event_id": "261016-057",
+      "event_type": "RESOURCE_CLEARED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-02",
+      "occurred_at": "2026-10-16T13:00:00+08:00",
+      "version": 4,
+      "summary": "备用教具查验合格、可用于本场",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "inspected_at": "V-MT"
+      }
+    },
+    {
+      "event_id": "261016-058",
+      "event_type": "TRANSFER_CLOSED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-002",
+      "occurred_at": "2026-10-16T13:10:00+08:00",
+      "version": 5,
+      "summary": "T-02 运单关闭",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-02"
+        ]
+      }
+    },
+    {
+      "event_id": "261016-059",
+      "event_type": "TRANSFER_HANDED_OVER",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-001",
+      "occurred_at": "2026-10-16T15:30:00+08:00",
+      "version": 4,
+      "summary": "T-01 迟延抵达明堂分馆并交接",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-01",
+          "R-REP-03"
+        ],
+        "handed_over_at": "V-MT",
+        "receiver_role": "明堂分馆库管员"
+      }
+    },
+    {
+      "event_id": "261016-060",
+      "event_type": "TRANSFER_ACKNOWLEDGED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-001",
+      "occurred_at": "2026-10-16T15:40:00+08:00",
+      "version": 5,
+      "summary": "T-01 签收：两件教具外观完好，待课前复检",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-01",
+          "R-REP-03"
+        ],
+        "acknowledged_at": "V-MT"
+      }
+    },
+    {
+      "event_id": "261016-061",
+      "event_type": "TRANSFER_CLOSED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-001",
+      "occurred_at": "2026-10-16T15:50:00+08:00",
+      "version": 6,
+      "summary": "T-01 运单关闭（迟延已记录）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-01",
+          "R-REP-03"
+        ]
+      }
+    },
+    {
+      "event_id": "261016-062",
+      "event_type": "VENUE_TAKEN_OUT_OF_SERVICE",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-MT",
+      "occurred_at": "2026-10-16T18:00:00+08:00",
+      "version": 4,
+      "summary": "明堂分馆供暖管道故障，10月17日临时闭馆",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "venue_id": "V-MT",
+        "reason": "heating_pipe_failure",
+        "closed_dates": [
+          "2026-10-17"
+        ]
+      }
+    },
+    {
+      "event_id": "261016-063",
+      "event_type": "SESSION_RELOCATED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-MT",
+      "occurred_at": "2026-10-16T18:20:00+08:00",
+      "version": 5,
+      "summary": "本场整体迁移至平城遗址分馆替代场次，同档期同时间",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "venue_id": "V-MT",
+        "to_venue_id": "V-PC",
+        "replacement_session_id": "S-20261017-PC"
+      },
+      "caused_by_event_id": "261016-062"
+    },
+    {
+      "event_id": "261016-064",
+      "event_type": "SESSION_OPENED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-PC",
+      "occurred_at": "2026-10-16T18:25:00+08:00",
+      "version": 1,
+      "summary": "替代场次在平城遗址分馆开仓（无障碍席位6，不少于原场4）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-PC",
+        "venue_id": "V-PC",
+        "course_code": "CM-BEIWEI-RESTORE",
+        "scheduled_start": "2026-10-17T10:00:00+08:00",
+        "scheduled_end": "2026-10-17T11:30:00+08:00",
+        "capacity": 30,
+        "protected_children_seats": 12,
+        "accessible_seats": 6,
+        "original_session_id": "S-20261017-MT",
+        "transferred_bookings": [
+          "B-2026-001",
+          "B-2026-002",
+          "B-2026-004"
+        ]
+      },
+      "caused_by_event_id": "261016-063"
+    },
+    {
+      "event_id": "261016-065",
+      "event_type": "SESSION_QUOTA_PROTECTED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-PC",
+      "occurred_at": "2026-10-16T18:26:00+08:00",
+      "version": 2,
+      "summary": "替代场次保障名额登记：儿童12、无障碍6（原名额平移，不重抽）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "protected_children_seats": 12,
+        "accessible_seats": 6,
+        "transferred_from": "S-20261017-MT"
+      },
+      "caused_by_event_id": "261016-063"
+    },
+    {
+      "event_id": "261016-066",
+      "event_type": "SESSION_CONTENT_PINNED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-PC",
+      "occurred_at": "2026-10-16T18:27:00+08:00",
+      "version": 3,
+      "summary": "替代场次沿用固化的讲解v1、展陈v1、材料v1",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "interpretation_id": "INT-BEIWEI",
+        "interpretation_version": "v1",
+        "exhibit_id": "EX-BEIWEI",
+        "exhibit_version": "v1",
+        "course_material_version": "v1"
+      },
+      "caused_by_event_id": "261016-063"
+    },
+    {
+      "event_id": "261016-067",
+      "event_type": "BOOKING_CONFIRMED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-001",
+      "occurred_at": "2026-10-16T18:30:00+08:00",
+      "version": 3,
+      "summary": "城区三小三年级预约平移至替代场次并重新确认，保留原确认时间",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-PC",
+        "seats": 12,
+        "quota_class": "children",
+        "original_session_id": "S-20261017-MT",
+        "original_confirmed_at": "2026-09-23T10:05:00+08:00"
+      },
+      "caused_by_event_id": "261016-063"
+    },
+    {
+      "event_id": "261016-068",
+      "event_type": "BOOKING_CONFIRMED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-002",
+      "occurred_at": "2026-10-16T18:30:00+08:00",
+      "version": 3,
+      "summary": "阳光之家家庭预约平移至替代场次并重新确认，保留原确认时间",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-PC",
+        "seats": 4,
+        "quota_class": "accessible",
+        "original_session_id": "S-20261017-MT",
+        "original_confirmed_at": "2026-09-24T10:05:00+08:00"
+      },
+      "caused_by_event_id": "261016-063"
+    },
+    {
+      "event_id": "261016-069",
+      "event_type": "BOOKING_CONFIRMED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-004",
+      "occurred_at": "2026-10-16T18:30:00+08:00",
+      "version": 3,
+      "summary": "高先生家庭预约平移至替代场次并重新确认，保留原确认时间",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-PC",
+        "seats": 2,
+        "quota_class": "general",
+        "original_session_id": "S-20261017-MT",
+        "original_confirmed_at": "2026-10-15T17:10:00+08:00"
+      },
+      "caused_by_event_id": "261016-063"
+    },
+    {
+      "event_id": "261016-070",
+      "event_type": "EDUCATOR_UNASSIGNED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-MT",
+      "occurred_at": "2026-10-16T18:35:00+08:00",
+      "version": 6,
+      "summary": "沈老师原场次指派随迁移解除",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "educator_id": "EDU-SHEN"
+      },
+      "caused_by_event_id": "261016-063"
+    },
+    {
+      "event_id": "261016-071",
+      "event_type": "EDUCATOR_ASSIGNED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-PC",
+      "occurred_at": "2026-10-16T18:36:00+08:00",
+      "version": 4,
+      "summary": "沈老师平移指派至替代场次（同档期不形成撞档）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "educator_id": "EDU-SHEN"
+      },
+      "caused_by_event_id": "261016-063"
+    },
+    {
+      "event_id": "261016-072",
+      "event_type": "RESOURCE_RESERVED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-01",
+      "occurred_at": "2026-10-16T18:40:00+08:00",
+      "version": 3,
+      "summary": "资源占用随迁移平移至替代场次：R-REP-01",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "session_id": "S-20261017-PC",
+        "venue_id": "V-PC",
+        "prior_session_id": "S-20261017-MT"
+      },
+      "caused_by_event_id": "261016-063"
+    },
+    {
+      "event_id": "261016-073",
+      "event_type": "RESOURCE_RESERVED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-02",
+      "occurred_at": "2026-10-16T18:40:00+08:00",
+      "version": 5,
+      "summary": "资源占用随迁移平移至替代场次：R-REP-02",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "session_id": "S-20261017-PC",
+        "venue_id": "V-PC",
+        "prior_session_id": "S-20261017-MT"
+      },
+      "caused_by_event_id": "261016-063"
+    },
+    {
+      "event_id": "261016-074",
+      "event_type": "RESOURCE_RESERVED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-03",
+      "occurred_at": "2026-10-16T18:40:00+08:00",
+      "version": 3,
+      "summary": "资源占用随迁移平移至替代场次：R-REP-03",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "session_id": "S-20261017-PC",
+        "venue_id": "V-PC",
+        "prior_session_id": "S-20261017-MT"
+      },
+      "caused_by_event_id": "261016-063"
+    },
+    {
+      "event_id": "261016-075",
+      "event_type": "RESOURCE_RESERVED",
+      "aggregate_type": "digital_content",
+      "aggregate_id": "D-DIG-01",
+      "occurred_at": "2026-10-16T18:40:00+08:00",
+      "version": 3,
+      "summary": "资源占用随迁移平移至替代场次：D-DIG-01",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "digital",
+        "session_id": "S-20261017-PC",
+        "venue_id": "V-PC",
+        "prior_session_id": "S-20261017-MT"
+      },
+      "caused_by_event_id": "261016-063"
+    },
+    {
+      "event_id": "261016-076",
+      "event_type": "WAITLIST_ENTRY_PROMOTED",
+      "aggregate_type": "waitlist_entry",
+      "aggregate_id": "W-001",
+      "occurred_at": "2026-10-16T18:45:00+08:00",
+      "version": 2,
+      "summary": "替代场次无障碍席位增至6，王女士候补转正 5/6",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-PC",
+        "party_size": 1,
+        "requested_class": "accessible",
+        "prior_session_id": "S-20261017-MT"
+      },
+      "caused_by_event_id": "261016-063"
+    },
+    {
+      "event_id": "261016-077",
+      "event_type": "GROUP_BOOKING_CREATED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-005",
+      "occurred_at": "2026-10-16T18:46:00+08:00",
+      "version": 1,
+      "summary": "王女士候补转正生成预约单（无障碍）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-PC",
+        "group_name": "王女士一行",
+        "seats": 1,
+        "quota_class": "accessible",
+        "from_waitlist": "W-001"
+      }
+    },
+    {
+      "event_id": "261016-078",
+      "event_type": "BOOKING_CONFIRMED",
+      "aggregate_type": "group_booking",
+      "aggregate_id": "B-2026-005",
+      "occurred_at": "2026-10-16T18:47:00+08:00",
+      "version": 2,
+      "summary": "王女士无障碍席位确认 5/6，剩余无障碍1席",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-PC",
+        "seats": 1,
+        "quota_class": "accessible"
+      }
+    },
+    {
+      "event_id": "261016-079",
+      "event_type": "TRANSFER_PLANNED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-003",
+      "occurred_at": "2026-10-16T19:00:00+08:00",
+      "version": 1,
+      "summary": "排接力运 T-03：三件教具 明堂分馆→平城遗址分馆（次日清晨送达）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "transfer_order_id": "T-2026-003",
+        "resources": [
+          "R-REP-01",
+          "R-REP-02",
+          "R-REP-03"
+        ],
+        "from_venue_id": "V-MT",
+        "to_venue_id": "V-PC",
+        "planned_arrival": "2026-10-17T08:45:00+08:00"
+      }
+    },
+    {
+      "event_id": "261017-080",
+      "event_type": "TRANSFER_DISPATCHED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-003",
+      "occurred_at": "2026-10-17T07:30:00+08:00",
+      "version": 2,
+      "summary": "T-03 发货",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-01",
+          "R-REP-02",
+          "R-REP-03"
+        ],
+        "from_venue_id": "V-MT",
+        "to_venue_id": "V-PC"
+      }
+    },
+    {
+      "event_id": "261017-081",
+      "event_type": "TRANSFER_HANDED_OVER",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-003",
+      "occurred_at": "2026-10-17T08:40:00+08:00",
+      "version": 3,
+      "summary": "T-03 到达平城遗址分馆并交接",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-01",
+          "R-REP-02",
+          "R-REP-03"
+        ],
+        "handed_over_at": "V-PC",
+        "receiver_role": "平城分馆库管员"
+      }
+    },
+    {
+      "event_id": "261017-082",
+      "event_type": "TRANSFER_ACKNOWLEDGED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-003",
+      "occurred_at": "2026-10-17T08:50:00+08:00",
+      "version": 4,
+      "summary": "T-03 签收，三件教具均已到替代场馆",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-01",
+          "R-REP-02",
+          "R-REP-03"
+        ],
+        "acknowledged_at": "V-PC",
+        "inspector_role": "平城分馆库管员"
+      }
+    },
+    {
+      "event_id": "261017-083",
+      "event_type": "TRANSFER_CLOSED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-003",
+      "occurred_at": "2026-10-17T09:00:00+08:00",
+      "version": 5,
+      "summary": "T-03 运单关闭",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-01",
+          "R-REP-02",
+          "R-REP-03"
+        ]
+      }
+    },
+    {
+      "event_id": "261017-084",
+      "event_type": "OFFLINE_REPORT_STARTED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-PC",
+      "occurred_at": "2026-10-17T10:00:00+08:00",
+      "version": 5,
+      "summary": "平城分馆网络中断，本地登记活动准时开始（补报）",
+      "idempotency_key": "S-20261017-PC#started#local-01",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-PC",
+        "venue_id": "V-PC",
+        "recorded_at": "2026-10-17T13:10:00+08:00",
+        "offline_device": "pc-branch-tablet-02"
+      }
+    },
+    {
+      "event_id": "261017-085",
+      "event_type": "OFFLINE_REPORT_COMPLETED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-PC",
+      "occurred_at": "2026-10-17T11:35:00+08:00",
+      "version": 6,
+      "summary": "本地登记活动结束（补报），儿童团与轮椅观众均顺利参与",
+      "idempotency_key": "S-20261017-PC#completed#local-01",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-PC",
+        "venue_id": "V-PC",
+        "recorded_at": "2026-10-17T13:10:00+08:00",
+        "offline_device": "pc-branch-tablet-02"
+      }
+    },
+    {
+      "event_id": "261017-086",
+      "event_type": "RESOURCE_RETURNED",
+      "aggregate_type": "digital_content",
+      "aggregate_id": "D-DIG-01",
+      "occurred_at": "2026-10-17T12:00:00+08:00",
+      "version": 4,
+      "summary": "数字走秀场次授权到期收回（可并发，无实体运输）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "digital",
+        "session_id": "S-20261017-PC"
+      }
+    },
+    {
+      "event_id": "261017-087",
+      "event_type": "RESOURCE_RETURNED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-01",
+      "occurred_at": "2026-10-17T13:30:00+08:00",
+      "version": 4,
+      "summary": "主用教具在平城分馆现场点交归还（离线补报）",
+      "idempotency_key": "R-REP-01#returned#S-20261017-PC",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "session_id": "S-20261017-PC",
+        "returned_at": "V-PC",
+        "recorded_at": "2026-10-17T16:20:00+08:00"
+      }
+    },
+    {
+      "event_id": "261017-088",
+      "event_type": "RESOURCE_RETURNED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-02",
+      "occurred_at": "2026-10-17T13:31:00+08:00",
+      "version": 6,
+      "summary": "备用教具现场点交归还（离线补报）",
+      "idempotency_key": "R-REP-02#returned#S-20261017-PC",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "session_id": "S-20261017-PC",
+        "returned_at": "V-PC",
+        "recorded_at": "2026-10-17T16:20:00+08:00"
+      }
+    },
+    {
+      "event_id": "261017-089",
+      "event_type": "RESOURCE_RETURNED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-03",
+      "occurred_at": "2026-10-17T13:32:00+08:00",
+      "version": 4,
+      "summary": "陶俑复制件现场点交归还（系带破损，待回总馆检查）",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "session_id": "S-20261017-PC",
+        "returned_at": "V-PC",
+        "noted_issue": "系带脱线"
+      }
+    },
+    {
+      "event_id": "261017-090",
+      "event_type": "TRANSFER_PLANNED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-004",
+      "occurred_at": "2026-10-17T13:35:00+08:00",
+      "version": 1,
+      "summary": "排回运 T-04：三件教具 平城遗址分馆→总馆",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "transfer_order_id": "T-2026-004",
+        "resources": [
+          "R-REP-01",
+          "R-REP-02",
+          "R-REP-03"
+        ],
+        "from_venue_id": "V-PC",
+        "to_venue_id": "V-MAIN",
+        "planned_arrival": "2026-10-17T16:00:00+08:00"
+      }
+    },
+    {
+      "event_id": "261017-091",
+      "event_type": "TRANSFER_DISPATCHED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-004",
+      "occurred_at": "2026-10-17T13:45:00+08:00",
+      "version": 2,
+      "summary": "T-04 发货",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-01",
+          "R-REP-02",
+          "R-REP-03"
+        ],
+        "from_venue_id": "V-PC",
+        "to_venue_id": "V-MAIN"
+      }
+    },
+    {
+      "event_id": "261017-092",
+      "event_type": "TRANSFER_HANDED_OVER",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-004",
+      "occurred_at": "2026-10-17T16:00:00+08:00",
+      "version": 3,
+      "summary": "T-04 到达总馆并交接",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-01",
+          "R-REP-02",
+          "R-REP-03"
+        ],
+        "handed_over_at": "V-MAIN",
+        "receiver_role": "总馆库房"
+      }
+    },
+    {
+      "event_id": "261017-093",
+      "event_type": "TRANSFER_ACKNOWLEDGED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-004",
+      "occurred_at": "2026-10-17T16:15:00+08:00",
+      "version": 4,
+      "summary": "T-04 签收，进入回馆查验",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-01",
+          "R-REP-02",
+          "R-REP-03"
+        ],
+        "acknowledged_at": "V-MAIN",
+        "inspector_role": "总馆库房"
+      }
+    },
+    {
+      "event_id": "261017-094",
+      "event_type": "CONDITION_RECORDED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-01",
+      "occurred_at": "2026-10-17T16:25:00+08:00",
+      "version": 5,
+      "summary": "主用教具回馆查验：完好",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "condition_result": "合格",
+        "inspected_at": "V-MAIN"
+      }
+    },
+    {
+      "event_id": "261017-095",
+      "event_type": "CONDITION_RECORDED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-02",
+      "occurred_at": "2026-10-17T16:26:00+08:00",
+      "version": 7,
+      "summary": "备用教具回馆查验：完好",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "condition_result": "合格",
+        "inspected_at": "V-MAIN"
+      }
+    },
+    {
+      "event_id": "261017-096",
+      "event_type": "CONDITION_RECORDED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-03",
+      "occurred_at": "2026-10-17T16:27:00+08:00",
+      "version": 5,
+      "summary": "陶俑复制件回馆查验：系带脱线，需修复，暂不可再用",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "condition_result": "不合格",
+        "inspected_at": "V-MAIN",
+        "issue": "系带脱线"
+      }
+    },
+    {
+      "event_id": "261017-097",
+      "event_type": "RESOURCE_CLEARED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-01",
+      "occurred_at": "2026-10-17T16:35:00+08:00",
+      "version": 6,
+      "summary": "主用教具复检合格，可再次使用",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica"
+      }
+    },
+    {
+      "event_id": "261017-098",
+      "event_type": "RESOURCE_CLEARED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-02",
+      "occurred_at": "2026-10-17T16:36:00+08:00",
+      "version": 8,
+      "summary": "备用教具复检合格，可再次使用",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica"
+      }
+    },
+    {
+      "event_id": "261017-099",
+      "event_type": "RESOURCE_QUARANTINED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-03",
+      "occurred_at": "2026-10-17T16:37:00+08:00",
+      "version": 6,
+      "summary": "陶俑复制件隔离待修（待检查），修复复检前不得再排用",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "reason": "系带脱线"
+      }
+    },
+    {
+      "event_id": "261017-100",
+      "event_type": "TRANSFER_CLOSED",
+      "aggregate_type": "transfer_order",
+      "aggregate_id": "T-2026-004",
+      "occurred_at": "2026-10-17T16:40:00+08:00",
+      "version": 5,
+      "summary": "T-04 运单关闭",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resources": [
+          "R-REP-01",
+          "R-REP-02",
+          "R-REP-03"
+        ]
+      }
+    },
+    {
+      "event_id": "261017-101",
+      "event_type": "SESSION_CLOSED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-PC",
+      "occurred_at": "2026-10-17T17:00:00+08:00",
+      "version": 7,
+      "summary": "替代场次归档关闭",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-PC"
+      }
+    },
+    {
+      "event_id": "261018-102",
+      "event_type": "ENVIRONMENT_CLEARED",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-MT",
+      "occurred_at": "2026-10-18T09:00:00+08:00",
+      "version": 5,
+      "summary": "明堂分馆湿度恢复至55%，环境达标",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "venue_id": "V-MT",
+        "reading": {
+          "temperature_c": 20.5,
+          "humidity_pct": 55
+        }
+      }
+    },
+    {
+      "event_id": "261018-103",
+      "event_type": "RESOURCE_CLEARED",
+      "aggregate_type": "collection_resource",
+      "aggregate_id": "R-AUTH-01",
+      "occurred_at": "2026-10-18T09:10:00+08:00",
+      "version": 5,
+      "summary": "真品陶俑复检通过，恢复可借调状态",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "authentic_object"
+      }
+    },
+    {
+      "event_id": "261018-104",
+      "event_type": "VENUE_BACK_IN_SERVICE",
+      "aggregate_type": "venue",
+      "aggregate_id": "V-MT",
+      "occurred_at": "2026-10-18T10:00:00+08:00",
+      "version": 6,
+      "summary": "明堂分馆供暖修复完成，恢复开放",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "venue_id": "V-MT",
+        "resolved_cause_event": "ref-62"
+      }
+    },
+    {
+      "event_id": "261019-105",
+      "event_type": "FEEDBACK_RECORDED",
+      "aggregate_type": "activity_feedback",
+      "aggregate_id": "F-001",
+      "occurred_at": "2026-10-19T10:00:00+08:00",
+      "version": 1,
+      "summary": "城区三小带队老师反馈：替代场馆通知及时，轮椅通道与无障碍席位充足",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-PC",
+        "from_role": "带队老师",
+        "ratings": {
+          "内容": 5,
+          "组织": 5,
+          "无障碍": 5
+        },
+        "note": "闭馆当天一早就收到了新地址与席位确认"
+      }
+    },
+    {
+      "event_id": "261019-106",
+      "event_type": "FEEDBACK_RECORDED",
+      "aggregate_type": "activity_feedback",
+      "aggregate_id": "F-002",
+      "occurred_at": "2026-10-19T11:00:00+08:00",
+      "version": 1,
+      "summary": "阳光之家反馈：数字走秀在教具迟到预案中起到作用",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-PC",
+        "from_role": "家属代表",
+        "ratings": {
+          "内容": 5,
+          "组织": 4,
+          "无障碍": 5
+        }
+      }
+    },
+    {
+      "event_id": "261020-107",
+      "event_type": "INTERPRETATION_PUBLISHED",
+      "aggregate_type": "interpretation",
+      "aggregate_id": "INT-BEIWEI-V2",
+      "occurred_at": "2026-10-20T09:00:00+08:00",
+      "version": 1,
+      "summary": "发布讲解口径 v2（吸收最新服制研究），旧版保留",
+      "payload": {
+        "interpretation_id": "INT-BEIWEI",
+        "version_tag": "v2",
+        "title": "平城鲜卑服制再考",
+        "supersedes": "INT-BEIWEI-V1"
+      }
+    },
+    {
+      "event_id": "261021-108",
+      "event_type": "EXHIBIT_VERSION_PUBLISHED",
+      "aggregate_type": "exhibit_version",
+      "aggregate_id": "EX-BEIWEI-V2",
+      "occurred_at": "2026-10-21T09:00:00+08:00",
+      "version": 1,
+      "summary": "发布《北魏服饰》展陈版本 v2",
+      "payload": {
+        "exhibit_id": "EX-BEIWEI",
+        "version_tag": "v2",
+        "title": "北魏服饰展陈（修订版）"
+      }
+    },
+    {
+      "event_id": "261021-109",
+      "event_type": "EXHIBIT_VERSION_SUPERSEDED",
+      "aggregate_type": "exhibit_version",
+      "aggregate_id": "EX-BEIWEI-V1",
+      "occurred_at": "2026-10-21T09:05:00+08:00",
+      "version": 2,
+      "summary": "展陈 v1 被 v2 更替（内容保留，供历史场次还原）",
+      "payload": {
+        "exhibit_id": "EX-BEIWEI",
+        "version_tag": "v1",
+        "superseded_by": "EX-BEIWEI-V2"
+      }
+    },
+    {
+      "event_id": "261022-110",
+      "event_type": "COURSE_MATERIAL_PUBLISHED",
+      "aggregate_type": "course_material",
+      "aggregate_id": "CM-BEIWEI-RESTORE",
+      "occurred_at": "2026-10-22T09:00:00+08:00",
+      "version": 2,
+      "summary": "课程材料更新为 v2（新增数字走秀操作卡）",
+      "payload": {
+        "course_code": "CM-BEIWEI-RESTORE",
+        "version_tag": "v2",
+        "title": "北魏服饰复原课",
+        "materials": [
+          "讲义v2",
+          "穿戴耗材清单v2",
+          "数字走秀操作卡v2"
+        ],
+        "supersedes": "v1"
+      }
+    },
+    {
+      "event_id": "261022-111",
+      "event_type": "RESOURCE_CLEARED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-03",
+      "occurred_at": "2026-10-22T15:00:00+08:00",
+      "version": 7,
+      "summary": "陶俑复制件系带修复并复检合格，可再次使用",
+      "payload": {
+        "resource_kind": "replica",
+        "repair_note": "系带重新缝合加固"
+      }
+    }
+  ],
+  "duplicate_deliveries": [
+    {
+      "event_id": "DUP-01",
+      "event_type": "OFFLINE_REPORT_STARTED",
+      "aggregate_type": "program_session",
+      "aggregate_id": "S-20261017-PC",
+      "occurred_at": "2026-10-17T10:00:00+08:00",
+      "version": 5,
+      "summary": "活动开始补报重投（与首条同幂等键，应丢弃）",
+      "idempotency_key": "S-20261017-PC#started#local-01",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "session_id": "S-20261017-PC",
+        "venue_id": "V-PC",
+        "recorded_at": "2026-10-17T13:11:00+08:00",
+        "delivery_attempt": 2
+      }
+    },
+    {
+      "event_id": "DUP-02",
+      "event_type": "RESOURCE_RETURNED",
+      "aggregate_type": "movable_replica",
+      "aggregate_id": "R-REP-02",
+      "occurred_at": "2026-10-17T13:31:00+08:00",
+      "version": 6,
+      "summary": "备用教具归还补报重投（同幂等键，应丢弃）",
+      "idempotency_key": "R-REP-02#returned#S-20261017-PC",
+      "correlation_id": "RELAY-20261017-BEIWEI",
+      "payload": {
+        "resource_kind": "replica",
+        "session_id": "S-20261017-PC",
+        "returned_at": "V-PC",
+        "recorded_at": "2026-10-17T16:21:00+08:00",
+        "delivery_attempt": 2
+      }
+    }
+  ]
 }
