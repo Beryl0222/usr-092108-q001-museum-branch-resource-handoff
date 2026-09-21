@@ -1,0 +1,1764 @@
+[
+  {
+    "event_id": "NW2026-0001",
+    "event_type": "VENUE_REGISTERED",
+    "aggregate_type": "venue",
+    "aggregate_id": "venue_main",
+    "occurred_at": "2026-09-01T09:00:00+08:00",
+    "version": 1,
+    "summary": "大同市博物馆总馆（御东）建档",
+    "payload": {
+      "venue_id": "venue_main",
+      "name": "大同市博物馆总馆",
+      "accessible_entrance": true,
+      "env_capable_for_textile": true,
+      "playback_ready": true
+    }
+  },
+  {
+    "event_id": "NW2026-0002",
+    "event_type": "VENUE_REGISTERED",
+    "aggregate_type": "venue",
+    "aggregate_id": "venue_mingtang",
+    "occurred_at": "2026-09-01T09:05:00+08:00",
+    "version": 1,
+    "summary": "明堂遗址分馆建档",
+    "payload": {
+      "venue_id": "venue_mingtang",
+      "name": "明堂遗址分馆",
+      "accessible_entrance": true,
+      "env_capable_for_textile": true,
+      "playback_ready": true
+    }
+  },
+  {
+    "event_id": "NW2026-0003",
+    "event_type": "VENUE_REGISTERED",
+    "aggregate_type": "venue",
+    "aggregate_id": "venue_beichao",
+    "occurred_at": "2026-09-01T09:10:00+08:00",
+    "version": 1,
+    "summary": "北朝艺术分馆建档",
+    "payload": {
+      "venue_id": "venue_beichao",
+      "name": "北朝艺术分馆",
+      "accessible_entrance": true,
+      "env_capable_for_textile": true,
+      "playback_ready": true
+    }
+  },
+  {
+    "event_id": "NW2026-0004",
+    "event_type": "VENUE_REGISTERED",
+    "aggregate_type": "venue",
+    "aggregate_id": "venue_kuangqu",
+    "occurred_at": "2026-09-01T09:15:00+08:00",
+    "version": 1,
+    "summary": "矿区研学服务点建档（无恒温恒湿条件）",
+    "payload": {
+      "venue_id": "venue_kuangqu",
+      "name": "矿区研学服务点",
+      "accessible_entrance": false,
+      "env_capable_for_textile": false,
+      "playback_ready": true
+    }
+  },
+  {
+    "event_id": "NW2026-0005",
+    "event_type": "RESOURCE_REGISTERED",
+    "aggregate_type": "collection_object",
+    "aggregate_id": "O-TEX-07",
+    "occurred_at": "2026-09-02T10:00:00+08:00",
+    "version": 1,
+    "summary": "北魏忍冬纹锦残片（纺织品真品）建档",
+    "payload": {
+      "resource_id": "O-TEX-07",
+      "resource_kind": "original",
+      "title": "北魏忍冬纹锦残片",
+      "home_venue_id": "venue_main"
+    }
+  },
+  {
+    "event_id": "NW2026-0006",
+    "event_type": "CONDITION_RECORDED",
+    "aggregate_type": "collection_object",
+    "aggregate_id": "O-TEX-07",
+    "occurred_at": "2026-09-02T10:30:00+08:00",
+    "version": 2,
+    "summary": "真品出库前状况检查：无病害",
+    "payload": {
+      "resource_id": "O-TEX-07",
+      "recorded_at": "2026-09-02T10:30:00+08:00",
+      "holds": [],
+      "assessment": "状况稳定，符合借展条件"
+    }
+  },
+  {
+    "event_id": "NW2026-0007",
+    "event_type": "RESOURCE_REGISTERED",
+    "aggregate_type": "replica",
+    "aggregate_id": "R-COSTUME-01",
+    "occurred_at": "2026-09-02T11:00:00+08:00",
+    "version": 1,
+    "summary": "可触摸复制教具：鲜卑垂裙幅冠全套（总馆套）",
+    "payload": {
+      "resource_id": "R-COSTUME-01",
+      "resource_kind": "replica",
+      "title": "鲜卑垂裙幅冠复制品·总馆套",
+      "home_venue_id": "venue_main"
+    }
+  },
+  {
+    "event_id": "NW2026-0008",
+    "event_type": "RESOURCE_REGISTERED",
+    "aggregate_type": "replica",
+    "aggregate_id": "R-COSTUME-02",
+    "occurred_at": "2026-09-02T11:05:00+08:00",
+    "version": 1,
+    "summary": "可触摸复制教具：鲜卑垂裙幅冠全套（北朝分馆常备套）",
+    "payload": {
+      "resource_id": "R-COSTUME-02",
+      "resource_kind": "replica",
+      "title": "鲜卑垂裙幅冠复制品·北朝分馆套",
+      "home_venue_id": "venue_beichao"
+    }
+  },
+  {
+    "event_id": "NW2026-0009",
+    "event_type": "RESOURCE_REGISTERED",
+    "aggregate_type": "replica",
+    "aggregate_id": "R-PANEL-88",
+    "occurred_at": "2026-09-02T11:10:00+08:00",
+    "version": 1,
+    "summary": "巡展展板支架（城墙分馆借展中常用）",
+    "payload": {
+      "resource_id": "R-PANEL-88",
+      "resource_kind": "replica",
+      "title": "巡展展板支架一套",
+      "home_venue_id": "venue_main"
+    }
+  },
+  {
+    "event_id": "NW2026-0010",
+    "event_type": "RESOURCE_REGISTERED",
+    "aggregate_type": "digital_content",
+    "aggregate_id": "D-MEDIA-03",
+    "occurred_at": "2026-09-02T14:00:00+08:00",
+    "version": 1,
+    "summary": "数字内容：北魏服饰穿戴互动程序",
+    "payload": {
+      "resource_id": "D-MEDIA-03",
+      "resource_kind": "digital",
+      "title": "北魏服饰穿戴互动程序 v3",
+      "home_venue_id": "venue_main"
+    }
+  },
+  {
+    "event_id": "NW2026-0011",
+    "event_type": "INTERPRETATION_VERSION_PUBLISHED",
+    "aggregate_type": "course_material",
+    "aggregate_id": "interp-nw-v1",
+    "occurred_at": "2026-09-03T09:00:00+08:00",
+    "version": 1,
+    "summary": "讲解解释 v1 发布：垂裙幅冠“风帽遮挡说”",
+    "payload": {
+      "version_id": "interp-nw-v1",
+      "course_id": "course_nw_costume",
+      "title": "北魏服饰讲解解释 v1",
+      "excerpt": "垂裙幅冠两侧垂裙旧解为骑马驰骋时遮挡风沙的风帽。"
+    }
+  },
+  {
+    "event_id": "NW2026-0012",
+    "event_type": "MATERIAL_VERSION_PUBLISHED",
+    "aggregate_type": "course_material",
+    "aggregate_id": "material-nw-v1",
+    "occurred_at": "2026-09-03T09:10:00+08:00",
+    "version": 1,
+    "summary": "课程材料 v1 发布",
+    "payload": {
+      "version_id": "material-nw-v1",
+      "course_id": "course_nw_costume",
+      "title": "北魏服饰复原课材料包 v1",
+      "excerpt": "含穿戴步骤卡 6 张、织物样本观察页 1 份。"
+    }
+  },
+  {
+    "event_id": "NW2026-0013",
+    "event_type": "EXHIBIT_VERSION_PUBLISHED",
+    "aggregate_type": "exhibit_version",
+    "aggregate_id": "exhibit-nw-v1",
+    "occurred_at": "2026-09-03T09:20:00+08:00",
+    "version": 1,
+    "summary": "展陈版本 v1 发布",
+    "payload": {
+      "version_id": "exhibit-nw-v1",
+      "title": "“魏衣·垂裙”展陈 v1（明堂版动线）",
+      "excerpt": "明堂分馆动线：展柜—触摸桌—穿戴体验区。"
+    }
+  },
+  {
+    "event_id": "NW2026-0014",
+    "event_type": "INSTRUCTOR_REGISTERED",
+    "aggregate_type": "instructor",
+    "aggregate_id": "I-LIN-01",
+    "occurred_at": "2026-09-03T10:00:00+08:00",
+    "version": 1,
+    "summary": "讲师林砚登记",
+    "payload": {
+      "instructor_id": "I-LIN-01",
+      "name": "林砚",
+      "qualifications": [
+        "北魏服饰专题",
+        "纺织品文物导览",
+        "研学团带队"
+      ]
+    }
+  },
+  {
+    "event_id": "NW2026-0015",
+    "event_type": "SESSION_OPENED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-0926-A",
+    "occurred_at": "2026-09-05T09:00:00+08:00",
+    "version": 1,
+    "summary": "北魏服饰复原课·明堂分馆场开放预约",
+    "payload": {
+      "session_id": "S-2026-0926-A",
+      "course_id": "course_nw_costume",
+      "title": "北魏服饰复原课",
+      "venue_id": "venue_mingtang",
+      "planned_start": "2026-09-26T10:00:00+08:00",
+      "planned_end": "2026-09-26T11:30:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0016",
+    "event_type": "VENUE_CAPACITY_DEFINED",
+    "aggregate_type": "venue_slot",
+    "aggregate_id": "slot-A",
+    "occurred_at": "2026-09-05T09:05:00+08:00",
+    "version": 1,
+    "summary": "明堂场容量建档：普通20/儿童团体12/无障碍4",
+    "payload": {
+      "slot_id": "slot-A",
+      "venue_id": "venue_mingtang",
+      "session_id": "S-2026-0926-A",
+      "seats_by_pool": {
+        "general": 20,
+        "children_group": 12,
+        "mobility_access": 4
+      }
+    }
+  },
+  {
+    "event_id": "NW2026-0017",
+    "event_type": "SESSION_CONTENT_LOCKED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-0926-A",
+    "occurred_at": "2026-09-05T09:10:00+08:00",
+    "version": 2,
+    "summary": "明堂场定版：讲解/材料/展陈均锁定 v1",
+    "payload": {
+      "session_id": "S-2026-0926-A",
+      "interpretation_version_id": "interp-nw-v1",
+      "material_version_id": "material-nw-v1",
+      "exhibit_version_id": "exhibit-nw-v1"
+    }
+  },
+  {
+    "event_id": "NW2026-0018",
+    "event_type": "INSTRUCTOR_ASSIGNED",
+    "aggregate_type": "instructor",
+    "aggregate_id": "I-LIN-01",
+    "occurred_at": "2026-09-05T09:15:00+08:00",
+    "version": 2,
+    "summary": "林砚承担明堂场（凭 2026.03 版资历）",
+    "payload": {
+      "instructor_id": "I-LIN-01",
+      "session_id": "S-2026-0926-A",
+      "qualification_version": "qual-2026.03"
+    }
+  },
+  {
+    "event_id": "NW2026-0019",
+    "event_type": "LOAN_REQUESTED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-A-ORIG",
+    "occurred_at": "2026-09-05T09:30:00+08:00",
+    "version": 1,
+    "summary": "申请真品忍冬纹锦残片赴明堂场",
+    "payload": {
+      "loan_id": "L-A-ORIG",
+      "resource_id": "O-TEX-07",
+      "resource_kind": "original",
+      "session_id": "S-2026-0926-A",
+      "requested_by": "venue_mingtang"
+    }
+  },
+  {
+    "event_id": "NW2026-0020",
+    "event_type": "LOAN_APPROVED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-A-ORIG",
+    "occurred_at": "2026-09-05T10:00:00+08:00",
+    "version": 2,
+    "summary": "真品借调批准：保险、押运、温湿度条件齐备",
+    "payload": {
+      "loan_id": "L-A-ORIG",
+      "resource_id": "O-TEX-07",
+      "session_id": "S-2026-0926-A",
+      "conditions": {
+        "insurance_confirmed": true,
+        "escort_confirmed": true,
+        "temp_range": [
+          15,
+          22
+        ],
+        "humidity_range": [
+          50,
+          60
+        ]
+      }
+    }
+  },
+  {
+    "event_id": "NW2026-0021",
+    "event_type": "LOAN_REQUESTED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-A-REP",
+    "occurred_at": "2026-09-05T09:32:00+08:00",
+    "version": 1,
+    "summary": "申请复制教具总馆套赴明堂场",
+    "payload": {
+      "loan_id": "L-A-REP",
+      "resource_id": "R-COSTUME-01",
+      "resource_kind": "replica",
+      "session_id": "S-2026-0926-A",
+      "requested_by": "venue_mingtang"
+    }
+  },
+  {
+    "event_id": "NW2026-0022",
+    "event_type": "LOAN_APPROVED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-A-REP",
+    "occurred_at": "2026-09-05T10:05:00+08:00",
+    "version": 2,
+    "summary": "复制品借调批准：车辆装载匹配",
+    "payload": {
+      "loan_id": "L-A-REP",
+      "resource_id": "R-COSTUME-01",
+      "session_id": "S-2026-0926-A",
+      "conditions": {
+        "vehicle_id": "VAN-02",
+        "transport_fit": true
+      }
+    }
+  },
+  {
+    "event_id": "NW2026-0023",
+    "event_type": "LOAN_REQUESTED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-A-DIG",
+    "occurred_at": "2026-09-05T09:34:00+08:00",
+    "version": 1,
+    "summary": "申请互动程序数字授权至明堂场",
+    "payload": {
+      "loan_id": "L-A-DIG",
+      "resource_id": "D-MEDIA-03",
+      "resource_kind": "digital",
+      "session_id": "S-2026-0926-A",
+      "requested_by": "venue_mingtang"
+    }
+  },
+  {
+    "event_id": "NW2026-0024",
+    "event_type": "LOAN_APPROVED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-A-DIG",
+    "occurred_at": "2026-09-05T10:10:00+08:00",
+    "version": 2,
+    "summary": "数字授权批准：覆盖明堂分馆且授权期在场次之后",
+    "payload": {
+      "loan_id": "L-A-DIG",
+      "resource_id": "D-MEDIA-03",
+      "session_id": "S-2026-0926-A",
+      "conditions": {
+        "license_covers_venue": true,
+        "license_expires_at": "2027-12-31T23:59:59+08:00"
+      }
+    }
+  },
+  {
+    "event_id": "NW2026-0025",
+    "event_type": "RESOURCE_RESERVED",
+    "aggregate_type": "collection_object",
+    "aggregate_id": "O-TEX-07",
+    "occurred_at": "2026-09-05T10:15:00+08:00",
+    "version": 3,
+    "summary": "真品预留给明堂场",
+    "payload": {
+      "resource_id": "O-TEX-07",
+      "session_id": "S-2026-0926-A"
+    }
+  },
+  {
+    "event_id": "NW2026-0026",
+    "event_type": "RESOURCE_RESERVED",
+    "aggregate_type": "replica",
+    "aggregate_id": "R-COSTUME-01",
+    "occurred_at": "2026-09-05T10:16:00+08:00",
+    "version": 2,
+    "summary": "复制品总馆套预留给明堂场",
+    "payload": {
+      "resource_id": "R-COSTUME-01",
+      "session_id": "S-2026-0926-A"
+    }
+  },
+  {
+    "event_id": "NW2026-0027",
+    "event_type": "RESOURCE_RESERVED",
+    "aggregate_type": "digital_content",
+    "aggregate_id": "D-MEDIA-03",
+    "occurred_at": "2026-09-05T10:17:00+08:00",
+    "version": 2,
+    "summary": "互动程序授权预留给明堂场",
+    "payload": {
+      "resource_id": "D-MEDIA-03",
+      "session_id": "S-2026-0926-A"
+    }
+  },
+  {
+    "event_id": "NW2026-0028",
+    "event_type": "GROUP_BOOKING_REQUESTED",
+    "aggregate_type": "group_booking",
+    "aggregate_id": "G-SCHOOL-01",
+    "occurred_at": "2026-09-06T08:30:00+08:00",
+    "version": 1,
+    "summary": "平城路小学三年级团体预约 30 人",
+    "payload": {
+      "booking_id": "G-SCHOOL-01",
+      "session_id": "S-2026-0926-A",
+      "group_name": "平城路小学三年级研学团",
+      "seats_by_pool": {
+        "children_group": 12,
+        "general": 18
+      },
+      "entitlements": [
+        "children_group"
+      ]
+    }
+  },
+  {
+    "event_id": "NW2026-0029",
+    "event_type": "GROUP_BOOKING_ACCEPTED",
+    "aggregate_type": "group_booking",
+    "aggregate_id": "G-SCHOOL-01",
+    "occurred_at": "2026-09-06T08:35:00+08:00",
+    "version": 2,
+    "summary": "儿童团体预约接受：儿童池12、普通池18",
+    "payload": {
+      "booking_id": "G-SCHOOL-01",
+      "session_id": "S-2026-0926-A",
+      "seats_by_pool": {
+        "children_group": 12,
+        "general": 18
+      }
+    }
+  },
+  {
+    "event_id": "NW2026-0030",
+    "event_type": "CAPACITY_ALLOCATED",
+    "aggregate_type": "venue_slot",
+    "aggregate_id": "slot-A",
+    "occurred_at": "2026-09-06T08:36:00+08:00",
+    "version": 2,
+    "summary": "分配儿童团体保障名额12",
+    "payload": {
+      "slot_id": "slot-A",
+      "session_id": "S-2026-0926-A",
+      "pool": "children_group",
+      "seats": 12,
+      "booking_id": "G-SCHOOL-01"
+    }
+  },
+  {
+    "event_id": "NW2026-0031",
+    "event_type": "CAPACITY_ALLOCATED",
+    "aggregate_type": "venue_slot",
+    "aggregate_id": "slot-A",
+    "occurred_at": "2026-09-06T08:37:00+08:00",
+    "version": 3,
+    "summary": "分配普通名额18",
+    "payload": {
+      "slot_id": "slot-A",
+      "session_id": "S-2026-0926-A",
+      "pool": "general",
+      "seats": 18,
+      "booking_id": "G-SCHOOL-01"
+    }
+  },
+  {
+    "event_id": "NW2026-0032",
+    "event_type": "GROUP_BOOKING_REQUESTED",
+    "aggregate_type": "group_booking",
+    "aggregate_id": "G-CARE-02",
+    "occurred_at": "2026-09-06T09:00:00+08:00",
+    "version": 1,
+    "summary": "康养中心轮椅体验组预约无障碍名额2",
+    "payload": {
+      "booking_id": "G-CARE-02",
+      "session_id": "S-2026-0926-A",
+      "group_name": "平城康养中心体验组",
+      "seats_by_pool": {
+        "mobility_access": 2
+      },
+      "entitlements": [
+        "mobility_access"
+      ]
+    }
+  },
+  {
+    "event_id": "NW2026-0033",
+    "event_type": "GROUP_BOOKING_ACCEPTED",
+    "aggregate_type": "group_booking",
+    "aggregate_id": "G-CARE-02",
+    "occurred_at": "2026-09-06T09:05:00+08:00",
+    "version": 2,
+    "summary": "无障碍保障名额2接受",
+    "payload": {
+      "booking_id": "G-CARE-02",
+      "session_id": "S-2026-0926-A",
+      "seats_by_pool": {
+        "mobility_access": 2
+      }
+    }
+  },
+  {
+    "event_id": "NW2026-0034",
+    "event_type": "CAPACITY_ALLOCATED",
+    "aggregate_type": "venue_slot",
+    "aggregate_id": "slot-A",
+    "occurred_at": "2026-09-06T09:06:00+08:00",
+    "version": 4,
+    "summary": "分配无障碍保障名额2",
+    "payload": {
+      "slot_id": "slot-A",
+      "session_id": "S-2026-0926-A",
+      "pool": "mobility_access",
+      "seats": 2,
+      "booking_id": "G-CARE-02"
+    }
+  },
+  {
+    "event_id": "NW2026-0035",
+    "event_type": "WAITLIST_ENTRY_CREATED",
+    "aggregate_type": "waitlist_entry",
+    "aggregate_id": "W-ZHANG-01",
+    "occurred_at": "2026-09-06T12:00:00+08:00",
+    "version": 1,
+    "summary": "散客张女士（行动不便）候补无障碍名额1",
+    "payload": {
+      "waitlist_id": "W-ZHANG-01",
+      "session_id": "S-2026-0926-A",
+      "visitor_name": "张女士",
+      "pool": "mobility_access",
+      "seats": 1
+    }
+  },
+  {
+    "event_id": "NW2026-0036",
+    "event_type": "WAITLIST_ENTRY_CREATED",
+    "aggregate_type": "waitlist_entry",
+    "aggregate_id": "W-LI-02",
+    "occurred_at": "2026-09-06T12:10:00+08:00",
+    "version": 1,
+    "summary": "散客李先生候补普通名额2",
+    "payload": {
+      "waitlist_id": "W-LI-02",
+      "session_id": "S-2026-0926-A",
+      "visitor_name": "李先生一家",
+      "pool": "general",
+      "seats": 2
+    }
+  },
+  {
+    "event_id": "NW2026-0037",
+    "event_type": "GROUP_BOOKING_REQUESTED",
+    "aggregate_type": "group_booking",
+    "aggregate_id": "G-AGENT-03",
+    "occurred_at": "2026-09-07T10:00:00+08:00",
+    "version": 1,
+    "summary": "某机构临时申请普通名额10",
+    "payload": {
+      "booking_id": "G-AGENT-03",
+      "session_id": "S-2026-0926-A",
+      "group_name": "某机构观摩团",
+      "seats_by_pool": {
+        "general": 10
+      },
+      "entitlements": []
+    }
+  },
+  {
+    "event_id": "NW2026-0038",
+    "event_type": "GROUP_BOOKING_REJECTED",
+    "aggregate_type": "group_booking",
+    "aggregate_id": "G-AGENT-03",
+    "occurred_at": "2026-09-07T10:02:00+08:00",
+    "version": 2,
+    "summary": "超额预约拒绝：普通池仅余2，不得占用儿童/无障碍保障名额",
+    "payload": {
+      "booking_id": "G-AGENT-03",
+      "session_id": "S-2026-0926-A",
+      "reasons": [
+        "普通池余额不足（剩余 2）",
+        "不得占用儿童/无障碍保障名额"
+      ]
+    }
+  },
+  {
+    "event_id": "NW2026-0039",
+    "event_type": "CAPACITY_RELEASED",
+    "aggregate_type": "venue_slot",
+    "aggregate_id": "slot-A",
+    "occurred_at": "2026-09-08T09:00:00+08:00",
+    "version": 5,
+    "summary": "康养中心因一人发烧释放无障碍名额1",
+    "payload": {
+      "slot_id": "slot-A",
+      "session_id": "S-2026-0926-A",
+      "pool": "mobility_access",
+      "seats": 1,
+      "booking_id": "G-CARE-02"
+    }
+  },
+  {
+    "event_id": "NW2026-0040",
+    "event_type": "WAITLIST_PROMOTED",
+    "aggregate_type": "waitlist_entry",
+    "aggregate_id": "W-ZHANG-01",
+    "occurred_at": "2026-09-08T09:05:00+08:00",
+    "version": 2,
+    "summary": "张女士候补补位成功（普通候补李先生不受影响）",
+    "payload": {
+      "waitlist_id": "W-ZHANG-01",
+      "session_id": "S-2026-0926-A",
+      "seats_by_pool": {
+        "mobility_access": 1
+      }
+    }
+  },
+  {
+    "event_id": "NW2026-0041",
+    "event_type": "CAPACITY_ALLOCATED",
+    "aggregate_type": "venue_slot",
+    "aggregate_id": "slot-A",
+    "occurred_at": "2026-09-08T09:06:00+08:00",
+    "version": 6,
+    "summary": "补位占用无障碍名额1",
+    "payload": {
+      "slot_id": "slot-A",
+      "session_id": "S-2026-0926-A",
+      "pool": "mobility_access",
+      "seats": 1,
+      "booking_id": "W-ZHANG-01"
+    }
+  },
+  {
+    "event_id": "NW2026-0042",
+    "event_type": "TRANSFER_DISPATCHED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-101",
+    "occurred_at": "2026-09-24T09:00:00+08:00",
+    "version": 1,
+    "summary": "真品由总柜装车，押运赴明堂分馆",
+    "payload": {
+      "transfer_id": "T-101",
+      "resource_ids": [
+        "O-TEX-07"
+      ],
+      "from_venue_id": "venue_main",
+      "to_venue_id": "venue_mingtang",
+      "planned_departure": "2026-09-24T09:00:00+08:00",
+      "planned_arrival": "2026-09-24T10:30:00+08:00",
+      "vehicle_id": "VAN-02",
+      "session_id": "S-2026-0926-A"
+    }
+  },
+  {
+    "event_id": "NW2026-0043",
+    "event_type": "TRANSFER_HANDOVER",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-101",
+    "occurred_at": "2026-09-24T09:05:00+08:00",
+    "version": 2,
+    "summary": "总馆出库交接：押运员与馆员双人签字，包装状况合格",
+    "payload": {
+      "transfer_id": "T-101",
+      "stage": "outbound_vault",
+      "resource_ids": [
+        "O-TEX-07"
+      ],
+      "from_party": "总馆藏品库",
+      "to_party": "押运组赵师傅",
+      "condition_check_passed": true,
+      "at": "2026-09-24T09:05:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0044",
+    "event_type": "TRANSFER_COMPLETED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-101",
+    "occurred_at": "2026-09-24T10:40:00+08:00",
+    "version": 3,
+    "summary": "真品送达明堂分馆并入库",
+    "payload": {
+      "transfer_id": "T-101",
+      "resource_ids": [
+        "O-TEX-07"
+      ],
+      "arrived_at": "2026-09-24T10:40:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0045",
+    "event_type": "TRANSFER_HANDOVER",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-101",
+    "occurred_at": "2026-09-24T10:45:00+08:00",
+    "version": 4,
+    "summary": "明堂分馆接收入柜，温湿度记录正常",
+    "payload": {
+      "transfer_id": "T-101",
+      "stage": "inbound_vault",
+      "resource_ids": [
+        "O-TEX-07"
+      ],
+      "from_party": "押运组赵师傅",
+      "to_party": "明堂分馆库房",
+      "condition_check_passed": true,
+      "at": "2026-09-24T10:45:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0046",
+    "event_type": "VENUE_TAKEN_OUT_OF_SERVICE",
+    "aggregate_type": "venue",
+    "aggregate_id": "venue_mingtang",
+    "occurred_at": "2026-09-25T08:00:00+08:00",
+    "version": 2,
+    "summary": "明堂分馆消防检修，9/26 全天临时闭馆",
+    "payload": {
+      "venue_id": "venue_mingtang",
+      "reason": "消防设备突发检修",
+      "from_time": "2026-09-26T00:00:00+08:00",
+      "to_time": "2026-09-26T23:59:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0047",
+    "event_type": "SESSION_CANCELLED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-0926-A",
+    "occurred_at": "2026-09-25T08:05:00+08:00",
+    "version": 3,
+    "summary": "明堂场取消，由替代场 S-2026-0927-B 承接",
+    "payload": {
+      "session_id": "S-2026-0926-A",
+      "reason": "明堂分馆临时闭馆，改至北朝艺术分馆替代场"
+    }
+  },
+  {
+    "event_id": "NW2026-0048",
+    "event_type": "SESSION_REPLACEMENT_CREATED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-0927-B",
+    "occurred_at": "2026-09-25T08:30:00+08:00",
+    "version": 1,
+    "summary": "为明堂场建立替代场：9/27 下午北朝艺术分馆",
+    "payload": {
+      "session_id": "S-2026-0927-B",
+      "replaces_session_id": "S-2026-0926-A",
+      "venue_id": "venue_beichao",
+      "planned_start": "2026-09-27T14:00:00+08:00",
+      "planned_end": "2026-09-27T15:30:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0049",
+    "event_type": "VENUE_CAPACITY_DEFINED",
+    "aggregate_type": "venue_slot",
+    "aggregate_id": "slot-B",
+    "occurred_at": "2026-09-25T08:35:00+08:00",
+    "version": 1,
+    "summary": "北朝场容量与原场一致：普通20/儿童12/无障碍4",
+    "payload": {
+      "slot_id": "slot-B",
+      "venue_id": "venue_beichao",
+      "session_id": "S-2026-0927-B",
+      "seats_by_pool": {
+        "general": 20,
+        "children_group": 12,
+        "mobility_access": 4
+      }
+    }
+  },
+  {
+    "event_id": "NW2026-0050",
+    "event_type": "QUOTA_TRANSFERRED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-0927-B",
+    "occurred_at": "2026-09-25T08:40:00+08:00",
+    "version": 2,
+    "summary": "原场名额按池整体迁移至替代场（不跨池、不平均）",
+    "payload": {
+      "from_session_id": "S-2026-0926-A",
+      "to_session_id": "S-2026-0927-B",
+      "pools": [
+        {
+          "pool": "children_group",
+          "seats": 12
+        },
+        {
+          "pool": "general",
+          "seats": 18
+        },
+        {
+          "pool": "mobility_access",
+          "seats": 2
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "NW2026-0051",
+    "event_type": "SESSION_CONTENT_LOCKED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-0927-B",
+    "occurred_at": "2026-09-25T08:45:00+08:00",
+    "version": 3,
+    "summary": "替代场沿用当时最新定版 v1",
+    "payload": {
+      "session_id": "S-2026-0927-B",
+      "interpretation_version_id": "interp-nw-v1",
+      "material_version_id": "material-nw-v1",
+      "exhibit_version_id": "exhibit-nw-v1"
+    }
+  },
+  {
+    "event_id": "NW2026-0052",
+    "event_type": "INSTRUCTOR_ASSIGNED",
+    "aggregate_type": "instructor",
+    "aggregate_id": "I-LIN-01",
+    "occurred_at": "2026-09-25T08:50:00+08:00",
+    "version": 3,
+    "summary": "林砚继续承担替代场",
+    "payload": {
+      "instructor_id": "I-LIN-01",
+      "session_id": "S-2026-0927-B",
+      "qualification_version": "qual-2026.03"
+    }
+  },
+  {
+    "event_id": "NW2026-0053",
+    "event_type": "LOAN_REQUESTED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-B-ORIG",
+    "occurred_at": "2026-09-25T09:00:00+08:00",
+    "version": 1,
+    "summary": "真品借调改至北朝场",
+    "payload": {
+      "loan_id": "L-B-ORIG",
+      "resource_id": "O-TEX-07",
+      "resource_kind": "original",
+      "session_id": "S-2026-0927-B",
+      "requested_by": "venue_beichao"
+    }
+  },
+  {
+    "event_id": "NW2026-0054",
+    "event_type": "LOAN_APPROVED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-B-ORIG",
+    "occurred_at": "2026-09-25T09:05:00+08:00",
+    "version": 2,
+    "summary": "真品改址批准：北朝馆恒湿条件达标、保险押运延续",
+    "payload": {
+      "loan_id": "L-B-ORIG",
+      "resource_id": "O-TEX-07",
+      "session_id": "S-2026-0927-B",
+      "conditions": {
+        "insurance_confirmed": true,
+        "escort_confirmed": true,
+        "temp_range": [
+          15,
+          22
+        ],
+        "humidity_range": [
+          50,
+          60
+        ]
+      }
+    }
+  },
+  {
+    "event_id": "NW2026-0055",
+    "event_type": "LOAN_REQUESTED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-B-DIG",
+    "occurred_at": "2026-09-25T09:10:00+08:00",
+    "version": 1,
+    "summary": "互动程序授权追加北朝分馆",
+    "payload": {
+      "loan_id": "L-B-DIG",
+      "resource_id": "D-MEDIA-03",
+      "resource_kind": "digital",
+      "session_id": "S-2026-0927-B",
+      "requested_by": "venue_beichao"
+    }
+  },
+  {
+    "event_id": "NW2026-0056",
+    "event_type": "LOAN_APPROVED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-B-DIG",
+    "occurred_at": "2026-09-25T09:12:00+08:00",
+    "version": 2,
+    "summary": "数字授权批准覆盖北朝分馆",
+    "payload": {
+      "loan_id": "L-B-DIG",
+      "resource_id": "D-MEDIA-03",
+      "session_id": "S-2026-0927-B",
+      "conditions": {
+        "license_covers_venue": true,
+        "license_expires_at": "2027-12-31T23:59:59+08:00"
+      }
+    }
+  },
+  {
+    "event_id": "NW2026-0057",
+    "event_type": "LOAN_REQUESTED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-B-REP",
+    "occurred_at": "2026-09-25T09:15:00+08:00",
+    "version": 1,
+    "summary": "复制品总馆套改运北朝分馆",
+    "payload": {
+      "loan_id": "L-B-REP",
+      "resource_id": "R-COSTUME-01",
+      "resource_kind": "replica",
+      "session_id": "S-2026-0927-B",
+      "requested_by": "venue_beichao"
+    }
+  },
+  {
+    "event_id": "NW2026-0058",
+    "event_type": "LOAN_APPROVED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-B-REP",
+    "occurred_at": "2026-09-25T09:20:00+08:00",
+    "version": 2,
+    "summary": "复制品改运批准",
+    "payload": {
+      "loan_id": "L-B-REP",
+      "resource_id": "R-COSTUME-01",
+      "session_id": "S-2026-0927-B",
+      "conditions": {
+        "vehicle_id": "VAN-05",
+        "transport_fit": true
+      }
+    }
+  },
+  {
+    "event_id": "NW2026-0059",
+    "event_type": "RESOURCE_RESERVED",
+    "aggregate_type": "collection_object",
+    "aggregate_id": "O-TEX-07",
+    "occurred_at": "2026-09-25T09:25:00+08:00",
+    "version": 4,
+    "summary": "真品改预留至替代场",
+    "payload": {
+      "resource_id": "O-TEX-07",
+      "session_id": "S-2026-0927-B"
+    }
+  },
+  {
+    "event_id": "NW2026-0060",
+    "event_type": "RESOURCE_RESERVED",
+    "aggregate_type": "replica",
+    "aggregate_id": "R-COSTUME-01",
+    "occurred_at": "2026-09-25T09:26:00+08:00",
+    "version": 3,
+    "summary": "复制品总馆套改预留至替代场",
+    "payload": {
+      "resource_id": "R-COSTUME-01",
+      "session_id": "S-2026-0927-B"
+    }
+  },
+  {
+    "event_id": "NW2026-0061",
+    "event_type": "RESOURCE_RESERVED",
+    "aggregate_type": "digital_content",
+    "aggregate_id": "D-MEDIA-03",
+    "occurred_at": "2026-09-25T09:27:00+08:00",
+    "version": 3,
+    "summary": "互动程序授权改预留至替代场",
+    "payload": {
+      "resource_id": "D-MEDIA-03",
+      "session_id": "S-2026-0927-B"
+    }
+  },
+  {
+    "event_id": "NW2026-0062",
+    "event_type": "TRANSFER_DISPATCHED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-102",
+    "occurred_at": "2026-09-27T08:30:00+08:00",
+    "version": 1,
+    "summary": "真品由明堂短驳至北朝分馆",
+    "payload": {
+      "transfer_id": "T-102",
+      "resource_ids": [
+        "O-TEX-07"
+      ],
+      "from_venue_id": "venue_mingtang",
+      "to_venue_id": "venue_beichao",
+      "planned_departure": "2026-09-27T08:30:00+08:00",
+      "planned_arrival": "2026-09-27T10:00:00+08:00",
+      "vehicle_id": "VAN-02",
+      "session_id": "S-2026-0927-B"
+    }
+  },
+  {
+    "event_id": "NW2026-0063",
+    "event_type": "TRANSFER_COMPLETED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-102",
+    "occurred_at": "2026-09-27T09:55:00+08:00",
+    "version": 2,
+    "summary": "真品提前送达北朝分馆",
+    "payload": {
+      "transfer_id": "T-102",
+      "resource_ids": [
+        "O-TEX-07"
+      ],
+      "arrived_at": "2026-09-27T09:55:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0064",
+    "event_type": "TRANSFER_HANDOVER",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-102",
+    "occurred_at": "2026-09-27T10:00:00+08:00",
+    "version": 3,
+    "summary": "北朝分馆验收真品入恒湿柜",
+    "payload": {
+      "transfer_id": "T-102",
+      "stage": "inbound_vault",
+      "resource_ids": [
+        "O-TEX-07"
+      ],
+      "from_party": "押运组赵师傅",
+      "to_party": "北朝分馆库房",
+      "condition_check_passed": true,
+      "at": "2026-09-27T10:00:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0065",
+    "event_type": "ENVIRONMENT_READING_RECORDED",
+    "aggregate_type": "venue",
+    "aggregate_id": "venue_beichao",
+    "occurred_at": "2026-09-26T20:00:00+08:00",
+    "version": 2,
+    "summary": "北朝馆展前环境读数正常",
+    "payload": {
+      "venue_id": "venue_beichao",
+      "observed_at": "2026-09-26T20:00:00+08:00",
+      "temp_c": 20.1,
+      "humidity_pct": 55.0,
+      "breach": false
+    }
+  },
+  {
+    "event_id": "NW2026-0066",
+    "event_type": "TRANSFER_DISPATCHED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-103",
+    "occurred_at": "2026-09-27T07:30:00+08:00",
+    "version": 1,
+    "summary": "同一辆车 VAN-05 另接城墙分馆展架运输单（争用暴露）",
+    "payload": {
+      "transfer_id": "T-103",
+      "resource_ids": [
+        "R-PANEL-88"
+      ],
+      "from_venue_id": "venue_main",
+      "to_venue_id": "venue_gucheng",
+      "planned_departure": "2026-09-27T07:30:00+08:00",
+      "planned_arrival": "2026-09-27T13:30:00+08:00",
+      "vehicle_id": "VAN-05"
+    }
+  },
+  {
+    "event_id": "NW2026-0067",
+    "event_type": "TRANSFER_DISPATCHED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-104",
+    "occurred_at": "2026-09-27T08:00:00+08:00",
+    "version": 1,
+    "summary": "复制品总馆套装车发运北朝分馆（VAN-05）",
+    "payload": {
+      "transfer_id": "T-104",
+      "resource_ids": [
+        "R-COSTUME-01"
+      ],
+      "from_venue_id": "venue_main",
+      "to_venue_id": "venue_beichao",
+      "planned_departure": "2026-09-27T08:00:00+08:00",
+      "planned_arrival": "2026-09-27T11:00:00+08:00",
+      "vehicle_id": "VAN-05",
+      "session_id": "S-2026-0927-B"
+    }
+  },
+  {
+    "event_id": "NW2026-0068",
+    "event_type": "TRANSFER_DELAYED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-104",
+    "occurred_at": "2026-09-27T11:30:00+08:00",
+    "version": 2,
+    "summary": "复制品运输迟延：先送城墙单导致绕行，预计15:00才到，赶不上14:00场次",
+    "payload": {
+      "transfer_id": "T-104",
+      "delay_minutes": 240,
+      "reason": "同车先执行城墙分馆展架单，路线冲突",
+      "new_eta": "2026-09-27T15:00:00+08:00",
+      "before_session_start": "2026-09-27T14:00:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0069",
+    "event_type": "TRANSFER_CANCELLED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-103",
+    "occurred_at": "2026-09-27T11:35:00+08:00",
+    "version": 2,
+    "summary": "调度取消城墙单的 VAN-05 安排，改派 VAN-07，解除争用",
+    "payload": {
+      "transfer_id": "T-103",
+      "resource_ids": [
+        "R-PANEL-88"
+      ],
+      "reason": "为复制品教具让车"
+    }
+  },
+  {
+    "event_id": "NW2026-0070",
+    "event_type": "SESSION_RESOURCES_REPLANNED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-0927-B",
+    "occurred_at": "2026-09-27T11:45:00+08:00",
+    "version": 4,
+    "summary": "运输迟延只影响复制品：启用北朝馆常备套 R-COSTUME-02",
+    "payload": {
+      "session_id": "S-2026-0927-B",
+      "trigger_event_id": "NW2026-0068",
+      "released": [
+        "R-COSTUME-01"
+      ],
+      "reassigned": [
+        {
+          "resource_id": "R-COSTUME-02",
+          "resource_kind": "replica"
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "NW2026-0071",
+    "event_type": "RESOURCE_RESERVED",
+    "aggregate_type": "replica",
+    "aggregate_id": "R-COSTUME-02",
+    "occurred_at": "2026-09-27T11:46:00+08:00",
+    "version": 2,
+    "summary": "北朝馆常备套紧急预留给替代场",
+    "payload": {
+      "resource_id": "R-COSTUME-02",
+      "session_id": "S-2026-0927-B"
+    }
+  },
+  {
+    "event_id": "NW2026-0072",
+    "event_type": "TRANSFER_COMPLETED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-104",
+    "occurred_at": "2026-09-27T15:05:00+08:00",
+    "version": 3,
+    "summary": "复制品总馆套课后才抵达北朝分馆（本场未使用）",
+    "payload": {
+      "transfer_id": "T-104",
+      "resource_ids": [
+        "R-COSTUME-01"
+      ],
+      "arrived_at": "2026-09-27T15:05:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0073",
+    "event_type": "ENVIRONMENT_READING_RECORDED",
+    "aggregate_type": "venue",
+    "aggregate_id": "venue_beichao",
+    "occurred_at": "2026-09-27T13:20:00+08:00",
+    "version": 3,
+    "summary": "北朝馆体验区空调故障，温湿度超标（场馆不停用，仅真品撤出）",
+    "payload": {
+      "venue_id": "venue_beichao",
+      "observed_at": "2026-09-27T13:20:00+08:00",
+      "temp_c": 24.6,
+      "humidity_pct": 65.0,
+      "breach": true
+    }
+  },
+  {
+    "event_id": "NW2026-0074",
+    "event_type": "RESOURCE_RECALLED",
+    "aggregate_type": "collection_object",
+    "aggregate_id": "O-TEX-07",
+    "occurred_at": "2026-09-27T13:25:00+08:00",
+    "version": 5,
+    "summary": "真品按借调条件紧急召回撤出，复制品与数字内容不受影响",
+    "payload": {
+      "resource_id": "O-TEX-07",
+      "reason": "展场温湿度超标，不符合纺织品条件"
+    }
+  },
+  {
+    "event_id": "NW2026-0075",
+    "event_type": "SESSION_RESOURCES_REPLANNED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-0927-B",
+    "occurred_at": "2026-09-27T13:30:00+08:00",
+    "version": 5,
+    "summary": "温湿度异常只撤出真品 O-TEX-07，其余资源不动，课程照常",
+    "payload": {
+      "session_id": "S-2026-0927-B",
+      "trigger_event_id": "NW2026-0073",
+      "released": [
+        "O-TEX-07"
+      ],
+      "reassigned": []
+    }
+  },
+  {
+    "event_id": "NW2026-0076",
+    "event_type": "TRANSFER_DISPATCHED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-105",
+    "occurred_at": "2026-09-27T16:30:00+08:00",
+    "version": 1,
+    "summary": "真品提前撤回总馆",
+    "payload": {
+      "transfer_id": "T-105",
+      "resource_ids": [
+        "O-TEX-07"
+      ],
+      "from_venue_id": "venue_beichao",
+      "to_venue_id": "venue_main",
+      "planned_departure": "2026-09-27T16:30:00+08:00",
+      "planned_arrival": "2026-09-27T18:00:00+08:00",
+      "vehicle_id": "VAN-02"
+    }
+  },
+  {
+    "event_id": "NW2026-0077",
+    "event_type": "TRANSFER_COMPLETED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-105",
+    "occurred_at": "2026-09-27T17:50:00+08:00",
+    "version": 2,
+    "summary": "真品运回总馆",
+    "payload": {
+      "transfer_id": "T-105",
+      "resource_ids": [
+        "O-TEX-07"
+      ],
+      "arrived_at": "2026-09-27T17:50:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0078",
+    "event_type": "RESOURCE_RETURNED",
+    "aggregate_type": "collection_object",
+    "aggregate_id": "O-TEX-07",
+    "occurred_at": "2026-09-27T18:10:00+08:00",
+    "version": 6,
+    "summary": "真品因环境异常提前归还，待检查",
+    "payload": {
+      "resource_id": "O-TEX-07",
+      "return_kind": "early_recall",
+      "from_session_id": "S-2026-0927-B"
+    }
+  },
+  {
+    "event_id": "NW2026-0079",
+    "event_type": "RETURN_INSPECTED",
+    "aggregate_type": "collection_object",
+    "aggregate_id": "O-TEX-07",
+    "occurred_at": "2026-09-28T10:00:00+08:00",
+    "version": 7,
+    "summary": "真品回库检查通过，可再次使用",
+    "payload": {
+      "resource_id": "O-TEX-07",
+      "result": "pass",
+      "notes": "锦片纤维与色彩无异常，超标时间短且已封柜"
+    }
+  },
+  {
+    "event_id": "NW2026-0080",
+    "event_type": "SESSION_DELIVERED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-0927-B",
+    "occurred_at": "2026-09-27T15:35:00+08:00",
+    "version": 6,
+    "summary": "北魏服饰复原课在北朝艺术分馆实际交付（复制品+数字内容）",
+    "payload": {
+      "session_id": "S-2026-0927-B",
+      "delivered_at": "2026-09-27T15:35:00+08:00",
+      "actual_venue_id": "venue_beichao"
+    }
+  },
+  {
+    "event_id": "NW2026-0081",
+    "event_type": "WAITLIST_EXPIRED",
+    "aggregate_type": "waitlist_entry",
+    "aggregate_id": "W-LI-02",
+    "occurred_at": "2026-09-27T15:40:00+08:00",
+    "version": 2,
+    "summary": "普通候补名额未出现，场后失效",
+    "payload": {
+      "waitlist_id": "W-LI-02",
+      "reason": "场次已结束，普通池无释放"
+    }
+  },
+  {
+    "event_id": "NW2026-0082",
+    "event_type": "FEEDBACK_SUBMITTED",
+    "aggregate_type": "activity_feedback",
+    "aggregate_id": "FB-01",
+    "occurred_at": "2026-09-27T18:00:00+08:00",
+    "version": 1,
+    "summary": "带队老师反馈：预约页地点、无障碍名额与现场一致",
+    "payload": {
+      "feedback_id": "FB-01",
+      "session_id": "S-2026-0927-B",
+      "author_role": "带队老师",
+      "rating": 5,
+      "comment": "闭馆换场当天就在预约页看到新地址和剩余无障碍名额；真品因湿度撤出也有提示，孩子们用常备套完成了穿戴。"
+    }
+  },
+  {
+    "event_id": "NW2026-0083",
+    "event_type": "FEEDBACK_SUBMITTED",
+    "aggregate_type": "activity_feedback",
+    "aggregate_id": "FB-02",
+    "occurred_at": "2026-09-27T18:20:00+08:00",
+    "version": 1,
+    "summary": "讲师反馈：定版材料与现场教具匹配",
+    "payload": {
+      "feedback_id": "FB-02",
+      "session_id": "S-2026-0927-B",
+      "author_role": "讲师",
+      "rating": 4,
+      "comment": "建议把环境异常时的数字替代讲解词写进下一版材料。"
+    }
+  },
+  {
+    "event_id": "NW2026-0084",
+    "event_type": "OFFLINE_REPORT_STARTED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-0927-B",
+    "occurred_at": "2026-09-28T09:00:00+08:00",
+    "version": 7,
+    "summary": "北朝馆网络恢复，补报昨日课后归档开始",
+    "payload": {
+      "branch_id": "venue_beichao",
+      "report_scope": "session_close",
+      "business_time": "2026-09-27T15:50:00+08:00"
+    },
+    "dedupe_key": "beichao-S-2026-0927-B-start",
+    "branch_id": "venue_beichao",
+    "source": "offline_backfill"
+  },
+  {
+    "event_id": "NW2026-0085",
+    "event_type": "OFFLINE_REPORT_STARTED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-0927-B",
+    "occurred_at": "2026-09-28T09:00:00+08:00",
+    "version": 7,
+    "summary": "北朝馆网络恢复，补报昨日课后归档开始",
+    "payload": {
+      "branch_id": "venue_beichao",
+      "report_scope": "session_close",
+      "business_time": "2026-09-27T15:50:00+08:00"
+    },
+    "dedupe_key": "beichao-S-2026-0927-B-start",
+    "branch_id": "venue_beichao",
+    "source": "offline_backfill"
+  },
+  {
+    "event_id": "NW2026-0086",
+    "event_type": "OFFLINE_REPORT_COMPLETED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-0927-B",
+    "occurred_at": "2026-09-28T09:03:00+08:00",
+    "version": 8,
+    "summary": "北朝馆补报课后归档完成",
+    "payload": {
+      "branch_id": "venue_beichao",
+      "report_scope": "session_close",
+      "business_time": "2026-09-27T16:10:00+08:00"
+    },
+    "dedupe_key": "beichao-S-2026-0927-B-complete",
+    "branch_id": "venue_beichao",
+    "source": "offline_backfill"
+  },
+  {
+    "event_id": "NW2026-0087",
+    "event_type": "OFFLINE_REPORT_COMPLETED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-0927-B",
+    "occurred_at": "2026-09-28T09:03:00+08:00",
+    "version": 8,
+    "summary": "北朝馆补报课后归档完成",
+    "payload": {
+      "branch_id": "venue_beichao",
+      "report_scope": "session_close",
+      "business_time": "2026-09-27T16:10:00+08:00"
+    },
+    "dedupe_key": "beichao-S-2026-0927-B-complete",
+    "branch_id": "venue_beichao",
+    "source": "offline_backfill"
+  },
+  {
+    "event_id": "NW2026-0088",
+    "event_type": "INTERPRETATION_VERSION_PUBLISHED",
+    "aggregate_type": "course_material",
+    "aggregate_id": "interp-nw-v2",
+    "occurred_at": "2026-09-29T10:00:00+08:00",
+    "version": 1,
+    "summary": "讲解解释 v2 发布：垂裙幅冠改采“御寒保暖实用说”",
+    "payload": {
+      "version_id": "interp-nw-v2",
+      "course_id": "course_nw_costume",
+      "title": "北魏服饰讲解解释 v2",
+      "excerpt": "据新出土平城墓群织物测算，垂裙主要用于颈部御寒，风沙遮挡为次要功能；原“风帽说”不再作为主讲口径。"
+    }
+  },
+  {
+    "event_id": "NW2026-0089",
+    "event_type": "MATERIAL_VERSION_PUBLISHED",
+    "aggregate_type": "course_material",
+    "aggregate_id": "material-nw-v2",
+    "occurred_at": "2026-09-29T10:10:00+08:00",
+    "version": 1,
+    "summary": "课程材料 v2 发布（增补环境异常数字替代讲解词）",
+    "payload": {
+      "version_id": "material-nw-v2",
+      "course_id": "course_nw_costume",
+      "title": "北魏服饰复原课材料包 v2",
+      "excerpt": "新增：真品撤出时以互动程序三维放大观察的引导词。"
+    }
+  },
+  {
+    "event_id": "NW2026-0090",
+    "event_type": "SESSION_OPENED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-1003-C",
+    "occurred_at": "2026-09-29T11:00:00+08:00",
+    "version": 1,
+    "summary": "矿区研学服务点场开放预约",
+    "payload": {
+      "session_id": "S-2026-1003-C",
+      "course_id": "course_nw_costume",
+      "title": "北魏服饰复原课·矿区场",
+      "venue_id": "venue_kuangqu",
+      "planned_start": "2026-10-03T10:00:00+08:00",
+      "planned_end": "2026-10-03T11:30:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0091",
+    "event_type": "VENUE_CAPACITY_DEFINED",
+    "aggregate_type": "venue_slot",
+    "aggregate_id": "slot-C",
+    "occurred_at": "2026-09-29T11:05:00+08:00",
+    "version": 1,
+    "summary": "矿区场容量：普通15（无独立无障碍通道，不设无障碍池）",
+    "payload": {
+      "slot_id": "slot-C",
+      "venue_id": "venue_kuangqu",
+      "session_id": "S-2026-1003-C",
+      "seats_by_pool": {
+        "general": 15,
+        "children_group": 0,
+        "mobility_access": 0
+      }
+    }
+  },
+  {
+    "event_id": "NW2026-0092",
+    "event_type": "SESSION_CONTENT_LOCKED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-1003-C",
+    "occurred_at": "2026-09-29T11:10:00+08:00",
+    "version": 2,
+    "summary": "矿区场锁定新版 v2 讲解与材料",
+    "payload": {
+      "session_id": "S-2026-1003-C",
+      "interpretation_version_id": "interp-nw-v2",
+      "material_version_id": "material-nw-v2",
+      "exhibit_version_id": "exhibit-nw-v1"
+    }
+  },
+  {
+    "event_id": "NW2026-0093",
+    "event_type": "LOAN_REQUESTED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-C-REP",
+    "occurred_at": "2026-09-29T11:20:00+08:00",
+    "version": 1,
+    "summary": "申请复制品总馆套赴矿区场（课后已到北朝，再转运）",
+    "payload": {
+      "loan_id": "L-C-REP",
+      "resource_id": "R-COSTUME-01",
+      "resource_kind": "replica",
+      "session_id": "S-2026-1003-C",
+      "requested_by": "venue_kuangqu"
+    }
+  },
+  {
+    "event_id": "NW2026-0094",
+    "event_type": "LOAN_APPROVED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-C-REP",
+    "occurred_at": "2026-09-29T11:25:00+08:00",
+    "version": 2,
+    "summary": "复制品借调批准",
+    "payload": {
+      "loan_id": "L-C-REP",
+      "resource_id": "R-COSTUME-01",
+      "session_id": "S-2026-1003-C",
+      "conditions": {
+        "vehicle_id": "VAN-06",
+        "transport_fit": true
+      }
+    }
+  },
+  {
+    "event_id": "NW2026-0095",
+    "event_type": "LOAN_REQUESTED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-C-ORIG",
+    "occurred_at": "2026-09-29T11:30:00+08:00",
+    "version": 1,
+    "summary": "矿区场曾尝试申请真品",
+    "payload": {
+      "loan_id": "L-C-ORIG",
+      "resource_id": "O-TEX-07",
+      "resource_kind": "original",
+      "session_id": "S-2026-1003-C",
+      "requested_by": "venue_kuangqu"
+    }
+  },
+  {
+    "event_id": "NW2026-0096",
+    "event_type": "LOAN_REJECTED",
+    "aggregate_type": "loan_request",
+    "aggregate_id": "L-C-ORIG",
+    "occurred_at": "2026-09-29T11:35:00+08:00",
+    "version": 2,
+    "summary": "真品借调拒绝：矿区点无恒温恒湿条件",
+    "payload": {
+      "loan_id": "L-C-ORIG",
+      "resource_id": "O-TEX-07",
+      "session_id": "S-2026-1003-C",
+      "reasons": [
+        "场地不具备纺织品温湿度展陈条件"
+      ]
+    }
+  },
+  {
+    "event_id": "NW2026-0097",
+    "event_type": "RESOURCE_RESERVED",
+    "aggregate_type": "replica",
+    "aggregate_id": "R-COSTUME-01",
+    "occurred_at": "2026-09-29T11:40:00+08:00",
+    "version": 4,
+    "summary": "复制品总馆套预留给矿区场",
+    "payload": {
+      "resource_id": "R-COSTUME-01",
+      "session_id": "S-2026-1003-C"
+    }
+  },
+  {
+    "event_id": "NW2026-0098",
+    "event_type": "TRANSFER_DISPATCHED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-106",
+    "occurred_at": "2026-10-01T09:00:00+08:00",
+    "version": 1,
+    "summary": "复制品由北朝分馆转运矿区服务点",
+    "payload": {
+      "transfer_id": "T-106",
+      "resource_ids": [
+        "R-COSTUME-01"
+      ],
+      "from_venue_id": "venue_beichao",
+      "to_venue_id": "venue_kuangqu",
+      "planned_departure": "2026-10-01T09:00:00+08:00",
+      "planned_arrival": "2026-10-01T11:00:00+08:00",
+      "vehicle_id": "VAN-06",
+      "session_id": "S-2026-1003-C"
+    }
+  },
+  {
+    "event_id": "NW2026-0099",
+    "event_type": "TRANSFER_COMPLETED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-106",
+    "occurred_at": "2026-10-01T10:50:00+08:00",
+    "version": 2,
+    "summary": "复制品送达矿区服务点",
+    "payload": {
+      "transfer_id": "T-106",
+      "resource_ids": [
+        "R-COSTUME-01"
+      ],
+      "arrived_at": "2026-10-01T10:50:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0100",
+    "event_type": "INSTRUCTOR_ASSIGNED",
+    "aggregate_type": "instructor",
+    "aggregate_id": "I-LIN-01",
+    "occurred_at": "2026-10-01T12:00:00+08:00",
+    "version": 4,
+    "summary": "林砚承担矿区场",
+    "payload": {
+      "instructor_id": "I-LIN-01",
+      "session_id": "S-2026-1003-C",
+      "qualification_version": "qual-2026.03"
+    }
+  },
+  {
+    "event_id": "NW2026-0101",
+    "event_type": "SESSION_DELIVERED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-1003-C",
+    "occurred_at": "2026-10-03T11:35:00+08:00",
+    "version": 3,
+    "summary": "矿区场实际交付",
+    "payload": {
+      "session_id": "S-2026-1003-C",
+      "delivered_at": "2026-10-03T11:35:00+08:00",
+      "actual_venue_id": "venue_kuangqu"
+    }
+  },
+  {
+    "event_id": "NW2026-0102",
+    "event_type": "OFFLINE_RETURN_REPORTED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-1003-C",
+    "occurred_at": "2026-10-04T08:30:00+08:00",
+    "version": 4,
+    "summary": "矿区点恢复网络，补报复制品已在 10/3 课后点收待退",
+    "payload": {
+      "branch_id": "venue_kuangqu",
+      "resource_ids": [
+        "R-COSTUME-01"
+      ],
+      "session_id": "S-2026-1003-C",
+      "business_time": "2026-10-03T16:00:00+08:00"
+    },
+    "dedupe_key": "kuangqu-S-2026-1003-C-return",
+    "branch_id": "venue_kuangqu",
+    "source": "offline_backfill"
+  },
+  {
+    "event_id": "NW2026-0103",
+    "event_type": "OFFLINE_RETURN_REPORTED",
+    "aggregate_type": "activity_session",
+    "aggregate_id": "S-2026-1003-C",
+    "occurred_at": "2026-10-04T08:30:00+08:00",
+    "version": 4,
+    "summary": "矿区点恢复网络，补报复制品已在 10/3 课后点收待退",
+    "payload": {
+      "branch_id": "venue_kuangqu",
+      "resource_ids": [
+        "R-COSTUME-01"
+      ],
+      "session_id": "S-2026-1003-C",
+      "business_time": "2026-10-03T16:00:00+08:00"
+    },
+    "dedupe_key": "kuangqu-S-2026-1003-C-return",
+    "branch_id": "venue_kuangqu",
+    "source": "offline_backfill"
+  },
+  {
+    "event_id": "NW2026-0104",
+    "event_type": "TRANSFER_DISPATCHED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-107",
+    "occurred_at": "2026-10-04T09:00:00+08:00",
+    "version": 1,
+    "summary": "复制品由矿区运回总馆",
+    "payload": {
+      "transfer_id": "T-107",
+      "resource_ids": [
+        "R-COSTUME-01"
+      ],
+      "from_venue_id": "venue_kuangqu",
+      "to_venue_id": "venue_main",
+      "planned_departure": "2026-10-04T09:00:00+08:00",
+      "planned_arrival": "2026-10-04T11:00:00+08:00",
+      "vehicle_id": "VAN-06"
+    }
+  },
+  {
+    "event_id": "NW2026-0105",
+    "event_type": "TRANSFER_COMPLETED",
+    "aggregate_type": "transfer_order",
+    "aggregate_id": "T-107",
+    "occurred_at": "2026-10-04T10:55:00+08:00",
+    "version": 2,
+    "summary": "复制品运回总馆",
+    "payload": {
+      "transfer_id": "T-107",
+      "resource_ids": [
+        "R-COSTUME-01"
+      ],
+      "arrived_at": "2026-10-04T10:55:00+08:00"
+    }
+  },
+  {
+    "event_id": "NW2026-0106",
+    "event_type": "RETURN_INSPECTED",
+    "aggregate_type": "replica",
+    "aggregate_id": "R-COSTUME-01",
+    "occurred_at": "2026-10-05T09:30:00+08:00",
+    "version": 5,
+    "summary": "复制品归还检查通过，可再次使用",
+    "payload": {
+      "resource_id": "R-COSTUME-01",
+      "result": "pass",
+      "notes": "幅冠系带磨损在允许范围，已登记例行维保"
+    }
+  }
+]

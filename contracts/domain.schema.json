@@ -19,20 +19,76 @@
     "event_type": {
       "type": "string",
       "enum": [
+        "RESOURCE_REGISTERED",
         "RESOURCE_RESERVED",
-        "TRANSFER_DISPATCHED",
+        "LOAN_REQUESTED",
+        "LOAN_APPROVED",
+        "LOAN_REJECTED",
         "CONDITION_RECORDED",
+        "RESOURCE_BLOCKED",
+        "RESOURCE_CLEARED",
+        "RESOURCE_RECALLED",
+        "RESOURCE_RETURNED",
+        "RETURN_INSPECTED",
+        "TRANSFER_DISPATCHED",
+        "TRANSFER_DELAYED",
+        "TRANSFER_HANDOVER",
+        "TRANSFER_COMPLETED",
+        "TRANSFER_CANCELLED",
+        "VENUE_REGISTERED",
+        "VENUE_CAPACITY_DEFINED",
+        "VENUE_TAKEN_OUT_OF_SERVICE",
+        "VENUE_RESUMED",
+        "ENVIRONMENT_READING_RECORDED",
+        "EXHIBIT_VERSION_PUBLISHED",
+        "EXHIBIT_VERSION_WITHDRAWN",
+        "MATERIAL_VERSION_PUBLISHED",
+        "INTERPRETATION_VERSION_PUBLISHED",
+        "SESSION_CONTENT_LOCKED",
         "SESSION_OPENED",
-        "RESOURCE_RETURNED"
+        "SESSION_REPLACEMENT_CREATED",
+        "SESSION_RESCHEDULED",
+        "SESSION_RESOURCES_REPLANNED",
+        "SESSION_CANCELLED",
+        "SESSION_DELIVERED",
+        "GROUP_BOOKING_REQUESTED",
+        "GROUP_BOOKING_ACCEPTED",
+        "GROUP_BOOKING_REJECTED",
+        "WAITLIST_ENTRY_CREATED",
+        "WAITLIST_PROMOTED",
+        "WAITLIST_EXPIRED",
+        "INSTRUCTOR_REGISTERED",
+        "INSTRUCTOR_QUALIFICATION_RECORDED",
+        "INSTRUCTOR_ASSIGNED",
+        "INSTRUCTOR_UNASSIGNED",
+        "CAPACITY_ALLOCATED",
+        "CAPACITY_RELEASED",
+        "QUOTA_TRANSFERRED",
+        "OFFLINE_REPORT_STARTED",
+        "OFFLINE_REPORT_COMPLETED",
+        "OFFLINE_RETURN_REPORTED",
+        "FEEDBACK_SUBMITTED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
-        "collection_resource",
-        "program_session",
+        "collection_object",
+        "replica",
+        "digital_content",
+        "exhibit_version",
+        "venue",
+        "venue_slot",
+        "instructor",
+        "course_material",
+        "loan_request",
         "transfer_order",
-        "venue_slot"
+        "group_booking",
+        "waitlist_entry",
+        "activity_session",
+        "activity_feedback",
+        "collection_resource",
+        "program_session"
       ]
     },
     "aggregate_id": {
@@ -50,7 +106,2003 @@
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "dedupe_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "causation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "correlation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "branch_id": {
+      "type": "string",
+      "minLength": 1
     }
   },
-  "additionalProperties": true
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "RESOURCE_REGISTERED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "collection_object",
+              "replica",
+              "digital_content"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "resource_kind",
+              "title",
+              "home_venue_id"
+            ],
+            "properties": {
+              "resource_kind": {
+                "minLength": 1
+              },
+              "title": {
+                "minLength": 1
+              },
+              "home_venue_id": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "RESOURCE_RESERVED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "collection_object",
+              "replica",
+              "digital_content",
+              "collection_resource"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "resource_id",
+              "session_id"
+            ],
+            "properties": {
+              "resource_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "LOAN_REQUESTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "loan_request"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "loan_id",
+              "resource_id",
+              "resource_kind",
+              "session_id",
+              "requested_by"
+            ],
+            "properties": {
+              "loan_id": {
+                "minLength": 1
+              },
+              "resource_id": {
+                "minLength": 1
+              },
+              "resource_kind": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "requested_by": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "LOAN_APPROVED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "loan_request"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "loan_id",
+              "resource_id",
+              "session_id",
+              "conditions"
+            ],
+            "properties": {
+              "loan_id": {
+                "minLength": 1
+              },
+              "resource_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "conditions": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "LOAN_REJECTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "loan_request"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "loan_id",
+              "resource_id",
+              "session_id",
+              "reasons"
+            ],
+            "properties": {
+              "loan_id": {
+                "minLength": 1
+              },
+              "resource_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "reasons": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "CONDITION_RECORDED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "collection_object",
+              "replica",
+              "collection_resource"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "resource_id",
+              "recorded_at",
+              "holds",
+              "assessment"
+            ],
+            "properties": {
+              "resource_id": {
+                "minLength": 1
+              },
+              "recorded_at": {
+                "minLength": 1
+              },
+              "holds": {
+                "minLength": 1
+              },
+              "assessment": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "RESOURCE_BLOCKED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "collection_object",
+              "replica",
+              "digital_content"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "resource_id",
+              "reason"
+            ],
+            "properties": {
+              "resource_id": {
+                "minLength": 1
+              },
+              "reason": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "RESOURCE_CLEARED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "collection_object",
+              "replica",
+              "digital_content"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "resource_id",
+              "reason"
+            ],
+            "properties": {
+              "resource_id": {
+                "minLength": 1
+              },
+              "reason": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "RESOURCE_RECALLED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "collection_object",
+              "replica"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "resource_id",
+              "reason"
+            ],
+            "properties": {
+              "resource_id": {
+                "minLength": 1
+              },
+              "reason": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "RESOURCE_RETURNED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "collection_object",
+              "replica"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "resource_id",
+              "return_kind",
+              "from_session_id"
+            ],
+            "properties": {
+              "resource_id": {
+                "minLength": 1
+              },
+              "return_kind": {
+                "minLength": 1
+              },
+              "from_session_id": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "RETURN_INSPECTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "collection_object",
+              "replica"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "resource_id",
+              "result"
+            ],
+            "properties": {
+              "resource_id": {
+                "minLength": 1
+              },
+              "result": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "TRANSFER_DISPATCHED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "transfer_order"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "transfer_id",
+              "resource_ids",
+              "from_venue_id",
+              "to_venue_id",
+              "planned_arrival",
+              "vehicle_id"
+            ],
+            "properties": {
+              "transfer_id": {
+                "minLength": 1
+              },
+              "resource_ids": {
+                "minLength": 1
+              },
+              "from_venue_id": {
+                "minLength": 1
+              },
+              "to_venue_id": {
+                "minLength": 1
+              },
+              "planned_arrival": {
+                "minLength": 1
+              },
+              "vehicle_id": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "TRANSFER_DELAYED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "transfer_order"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "transfer_id",
+              "delay_minutes",
+              "reason"
+            ],
+            "properties": {
+              "transfer_id": {
+                "minLength": 1
+              },
+              "delay_minutes": {
+                "minLength": 1
+              },
+              "reason": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "TRANSFER_HANDOVER"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "transfer_order"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "transfer_id",
+              "stage",
+              "resource_ids",
+              "from_party",
+              "to_party",
+              "condition_check_passed"
+            ],
+            "properties": {
+              "transfer_id": {
+                "minLength": 1
+              },
+              "stage": {
+                "minLength": 1
+              },
+              "resource_ids": {
+                "minLength": 1
+              },
+              "from_party": {
+                "minLength": 1
+              },
+              "to_party": {
+                "minLength": 1
+              },
+              "condition_check_passed": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "TRANSFER_COMPLETED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "transfer_order"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "transfer_id",
+              "resource_ids",
+              "arrived_at"
+            ],
+            "properties": {
+              "transfer_id": {
+                "minLength": 1
+              },
+              "resource_ids": {
+                "minLength": 1
+              },
+              "arrived_at": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "TRANSFER_CANCELLED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "transfer_order"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "transfer_id",
+              "resource_ids",
+              "reason"
+            ],
+            "properties": {
+              "transfer_id": {
+                "minLength": 1
+              },
+              "resource_ids": {
+                "minLength": 1
+              },
+              "reason": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "VENUE_REGISTERED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "venue"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "venue_id",
+              "name",
+              "accessible_entrance"
+            ],
+            "properties": {
+              "venue_id": {
+                "minLength": 1
+              },
+              "name": {
+                "minLength": 1
+              },
+              "accessible_entrance": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "VENUE_CAPACITY_DEFINED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "venue_slot"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "slot_id",
+              "venue_id",
+              "session_id",
+              "seats_by_pool"
+            ],
+            "properties": {
+              "slot_id": {
+                "minLength": 1
+              },
+              "venue_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "seats_by_pool": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "VENUE_TAKEN_OUT_OF_SERVICE"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "venue"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "venue_id",
+              "reason",
+              "from_time"
+            ],
+            "properties": {
+              "venue_id": {
+                "minLength": 1
+              },
+              "reason": {
+                "minLength": 1
+              },
+              "from_time": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "VENUE_RESUMED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "venue"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "venue_id",
+              "resumed_at"
+            ],
+            "properties": {
+              "venue_id": {
+                "minLength": 1
+              },
+              "resumed_at": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "ENVIRONMENT_READING_RECORDED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "venue"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "venue_id",
+              "observed_at",
+              "temp_c",
+              "humidity_pct",
+              "breach"
+            ],
+            "properties": {
+              "venue_id": {
+                "minLength": 1
+              },
+              "observed_at": {
+                "minLength": 1
+              },
+              "temp_c": {
+                "minLength": 1
+              },
+              "humidity_pct": {
+                "minLength": 1
+              },
+              "breach": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "EXHIBIT_VERSION_PUBLISHED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "exhibit_version"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "version_id",
+              "title"
+            ],
+            "properties": {
+              "version_id": {
+                "minLength": 1
+              },
+              "title": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "EXHIBIT_VERSION_WITHDRAWN"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "exhibit_version"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "version_id",
+              "reason"
+            ],
+            "properties": {
+              "version_id": {
+                "minLength": 1
+              },
+              "reason": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "MATERIAL_VERSION_PUBLISHED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "course_material"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "version_id",
+              "course_id",
+              "title"
+            ],
+            "properties": {
+              "version_id": {
+                "minLength": 1
+              },
+              "course_id": {
+                "minLength": 1
+              },
+              "title": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "INTERPRETATION_VERSION_PUBLISHED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "course_material"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "version_id",
+              "course_id",
+              "title"
+            ],
+            "properties": {
+              "version_id": {
+                "minLength": 1
+              },
+              "course_id": {
+                "minLength": 1
+              },
+              "title": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "SESSION_CONTENT_LOCKED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "activity_session",
+              "program_session"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "session_id",
+              "interpretation_version_id",
+              "material_version_id",
+              "exhibit_version_id"
+            ],
+            "properties": {
+              "session_id": {
+                "minLength": 1
+              },
+              "interpretation_version_id": {
+                "minLength": 1
+              },
+              "material_version_id": {
+                "minLength": 1
+              },
+              "exhibit_version_id": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "SESSION_OPENED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "activity_session",
+              "program_session"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "session_id",
+              "course_id",
+              "venue_id",
+              "planned_start",
+              "planned_end",
+              "title"
+            ],
+            "properties": {
+              "session_id": {
+                "minLength": 1
+              },
+              "course_id": {
+                "minLength": 1
+              },
+              "venue_id": {
+                "minLength": 1
+              },
+              "planned_start": {
+                "minLength": 1
+              },
+              "planned_end": {
+                "minLength": 1
+              },
+              "title": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "SESSION_REPLACEMENT_CREATED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "activity_session"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "session_id",
+              "replaces_session_id",
+              "venue_id",
+              "planned_start",
+              "planned_end"
+            ],
+            "properties": {
+              "session_id": {
+                "minLength": 1
+              },
+              "replaces_session_id": {
+                "minLength": 1
+              },
+              "venue_id": {
+                "minLength": 1
+              },
+              "planned_start": {
+                "minLength": 1
+              },
+              "planned_end": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "SESSION_RESCHEDULED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "activity_session",
+              "program_session"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "session_id",
+              "old_start",
+              "new_start",
+              "reason"
+            ],
+            "properties": {
+              "session_id": {
+                "minLength": 1
+              },
+              "old_start": {
+                "minLength": 1
+              },
+              "new_start": {
+                "minLength": 1
+              },
+              "reason": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "SESSION_RESOURCES_REPLANNED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "activity_session"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "session_id",
+              "trigger_event_id",
+              "released",
+              "reassigned"
+            ],
+            "properties": {
+              "session_id": {
+                "minLength": 1
+              },
+              "trigger_event_id": {
+                "minLength": 1
+              },
+              "released": {
+                "minLength": 1
+              },
+              "reassigned": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "SESSION_CANCELLED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "activity_session",
+              "program_session"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "session_id",
+              "reason"
+            ],
+            "properties": {
+              "session_id": {
+                "minLength": 1
+              },
+              "reason": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "SESSION_DELIVERED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "activity_session",
+              "program_session"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "session_id",
+              "delivered_at",
+              "actual_venue_id"
+            ],
+            "properties": {
+              "session_id": {
+                "minLength": 1
+              },
+              "delivered_at": {
+                "minLength": 1
+              },
+              "actual_venue_id": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "GROUP_BOOKING_REQUESTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "group_booking"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "booking_id",
+              "session_id",
+              "group_name",
+              "seats_by_pool"
+            ],
+            "properties": {
+              "booking_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "group_name": {
+                "minLength": 1
+              },
+              "seats_by_pool": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "GROUP_BOOKING_ACCEPTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "group_booking"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "booking_id",
+              "session_id",
+              "seats_by_pool"
+            ],
+            "properties": {
+              "booking_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "seats_by_pool": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "GROUP_BOOKING_REJECTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "group_booking"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "booking_id",
+              "session_id",
+              "reasons"
+            ],
+            "properties": {
+              "booking_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "reasons": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "WAITLIST_ENTRY_CREATED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "waitlist_entry"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "waitlist_id",
+              "session_id",
+              "visitor_name",
+              "pool",
+              "seats"
+            ],
+            "properties": {
+              "waitlist_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "visitor_name": {
+                "minLength": 1
+              },
+              "pool": {
+                "minLength": 1
+              },
+              "seats": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "WAITLIST_PROMOTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "waitlist_entry"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "waitlist_id",
+              "session_id",
+              "seats_by_pool"
+            ],
+            "properties": {
+              "waitlist_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "seats_by_pool": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "WAITLIST_EXPIRED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "waitlist_entry"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "waitlist_id",
+              "reason"
+            ],
+            "properties": {
+              "waitlist_id": {
+                "minLength": 1
+              },
+              "reason": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "INSTRUCTOR_REGISTERED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "instructor"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "instructor_id",
+              "name",
+              "qualifications"
+            ],
+            "properties": {
+              "instructor_id": {
+                "minLength": 1
+              },
+              "name": {
+                "minLength": 1
+              },
+              "qualifications": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "INSTRUCTOR_QUALIFICATION_RECORDED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "instructor"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "instructor_id",
+              "qualifications"
+            ],
+            "properties": {
+              "instructor_id": {
+                "minLength": 1
+              },
+              "qualifications": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "INSTRUCTOR_ASSIGNED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "instructor"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "instructor_id",
+              "session_id",
+              "qualification_version"
+            ],
+            "properties": {
+              "instructor_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "qualification_version": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "INSTRUCTOR_UNASSIGNED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "instructor"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "instructor_id",
+              "session_id",
+              "reason"
+            ],
+            "properties": {
+              "instructor_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "reason": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "CAPACITY_ALLOCATED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "venue_slot"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "slot_id",
+              "session_id",
+              "pool",
+              "seats",
+              "booking_id"
+            ],
+            "properties": {
+              "slot_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "pool": {
+                "minLength": 1
+              },
+              "seats": {
+                "minLength": 1
+              },
+              "booking_id": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "CAPACITY_RELEASED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "venue_slot"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "slot_id",
+              "session_id",
+              "pool",
+              "seats",
+              "booking_id"
+            ],
+            "properties": {
+              "slot_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "pool": {
+                "minLength": 1
+              },
+              "seats": {
+                "minLength": 1
+              },
+              "booking_id": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "QUOTA_TRANSFERRED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "activity_session"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "from_session_id",
+              "to_session_id",
+              "pools"
+            ],
+            "properties": {
+              "from_session_id": {
+                "minLength": 1
+              },
+              "to_session_id": {
+                "minLength": 1
+              },
+              "pools": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "OFFLINE_REPORT_STARTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "activity_session"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "branch_id",
+              "report_scope",
+              "business_time"
+            ],
+            "properties": {
+              "branch_id": {
+                "minLength": 1
+              },
+              "report_scope": {
+                "minLength": 1
+              },
+              "business_time": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "OFFLINE_REPORT_COMPLETED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "activity_session"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "branch_id",
+              "report_scope",
+              "business_time"
+            ],
+            "properties": {
+              "branch_id": {
+                "minLength": 1
+              },
+              "report_scope": {
+                "minLength": 1
+              },
+              "business_time": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "OFFLINE_RETURN_REPORTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "activity_session"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "branch_id",
+              "resource_ids",
+              "session_id",
+              "business_time"
+            ],
+            "properties": {
+              "branch_id": {
+                "minLength": 1
+              },
+              "resource_ids": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "business_time": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "const": "FEEDBACK_SUBMITTED"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "aggregate_type": {
+            "enum": [
+              "activity_feedback"
+            ]
+          },
+          "payload": {
+            "type": "object",
+            "required": [
+              "feedback_id",
+              "session_id",
+              "author_role",
+              "rating"
+            ],
+            "properties": {
+              "feedback_id": {
+                "minLength": 1
+              },
+              "session_id": {
+                "minLength": 1
+              },
+              "author_role": {
+                "minLength": 1
+              },
+              "rating": {
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true,
+  "description": "离线补报事件 OFFLINE_REPORT_STARTED、OFFLINE_REPORT_COMPLETED、OFFLINE_RETURN_REPORTED 必须携带非空 dedupe_key（业务层强制：同一补报只认一次）。"
 }
